@@ -8,7 +8,7 @@ import DIGITAL from "../assets/DIGI_MARKETING.jpg";
 import e_commerce from "../assets/E-COMMERCE.jpg";  
 import mobile from "../assets/MOBILE_DEV.jpg"
 import virtualClasses from '../assets/ONLINE_CLASS.jpg';
-import web from "../assets/web.jpg";
+import web from "../assets/WEB.jpg";
 import IT from "../assets/IT.jpg";
 import portfolio from "../assets/PORTFOLIO.jpg";
 
