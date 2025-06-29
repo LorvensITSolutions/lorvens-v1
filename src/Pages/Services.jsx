@@ -13,27 +13,30 @@ import IT from "../assets/IT.jpg";
 import portfolio from "../assets/PORTFOLIO.jpg";
 
 export const services = [
+
   {
-    title: "Mobile Solutions",
-    tagline: "Native & Cross-Platform Excellence",
-    description: "Transform your ideas into powerful mobile experiences. We build scalable iOS and Android applications with intuitive design, robust security, and seamless performance that grows with your business needs.",
-    image: mobile,
-    features: ["iOS & Android", "Cross-Platform", "Performance Optimized"]
-  },
-  {
-    title: "Web Applications",
+    title: "Web Development",
     tagline: "Modern, Fast & Secure",
     description: "Create dynamic web experiences that deliver results. From progressive web apps to enterprise solutions, we craft responsive, accessible, and high-performing applications tailored to your workflow.",
     image: web,
     features: ["Progressive Web Apps", "Enterprise Grade", "Cloud Ready"]
   },
-  {
-    title: "Learning Platforms",
-    tagline: "Education Technology Solutions",
-    description: "Bridge the gap between knowledge and learners with immersive educational platforms. We build scalable e-learning solutions that make education accessible, engaging, and effective for everyone.",
-    image: virtualClasses,
-    features: ["Interactive Learning", "Real-time Collaboration", "Accessible Design"]
+    {
+    title: "Android Development",
+    tagline: "Native & Cross-Platform Excellence",
+    description: "Transform your ideas into powerful mobile experiences. We build scalable iOS and Android applications with intuitive design, robust security, and seamless performance that grows with your business needs.",
+    image: mobile,
+    features: ["iOS & Android", "Cross-Platform", "Performance Optimized"]
   },
+    {
+    title: "Degital Marketing",
+    tagline: "Strategic Marketing Solutions",
+    description: "Amplify your brand's reach with data-driven marketing strategies. We combine creativity with analytics to deliver campaigns that build meaningful connections and drive measurable results.",
+    image: DIGITAL,
+    features: ["SEO & SEM", "Content Strategy", "Performance Tracking"]
+  },
+  
+
   {
     title: "E-Commerce Platforms",
     tagline: "Complete Commerce Solutions",
@@ -41,6 +44,14 @@ export const services = [
     image: e_commerce,
     features: ["Secure Payments", "Inventory Management", "Analytics Dashboard"]
   },
+    {
+    title: "Learning Platforms",
+    tagline: "Education Technology Solutions",
+    description: "Bridge the gap between knowledge and learners with immersive educational platforms. We build scalable e-learning solutions that make education accessible, engaging, and effective for everyone.",
+    image: virtualClasses,
+    features: ["Interactive Learning", "Real-time Collaboration", "Accessible Design"]
+  },
+
   {
     title: "Digital Portfolios",
     tagline: "Your Professional Presence",
@@ -54,13 +65,6 @@ export const services = [
     description: "Harness the power of artificial intelligence to streamline operations and unlock insights. We implement responsible AI solutions that enhance productivity while maintaining human oversight.",
     image: AI,
     features: ["Process Automation", "Data Analytics", "Responsible AI"]
-  },
-  {
-    title: "Digital Growth",
-    tagline: "Strategic Marketing Solutions",
-    description: "Amplify your brand's reach with data-driven marketing strategies. We combine creativity with analytics to deliver campaigns that build meaningful connections and drive measurable results.",
-    image: DIGITAL,
-    features: ["SEO & SEM", "Content Strategy", "Performance Tracking"]
   },
   {
     title: "Technology Consulting",
@@ -141,7 +145,7 @@ const Services = () => {
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>Trusted by 500+ Clients</span>
+                <span>Trusted platform</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>

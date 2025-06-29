@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-[#FFF6E5] pt-10 text-[#1F1F1F]">
       <motion.h1
-        className="text-3xl pt-10 sm:text-4xl md:text-5xl font-extrabold text-center text-orange-600 mb-10"
+        className="text-3xl pt-15 sm:text-4xl md:text-5xl font-extrabold text-center text-orange-600 mb-10"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -77,16 +77,16 @@ const ContactPage = () => {
             <div className="flex items-start gap-3">
               <MapPin className="text-orange-600 mt-1" />
               <p>
-                  2nd Floor, Plot No 530/a, Jubilee hills, Hyderabad, Telangana - 500081
+                  1st Floor, Flat No 530, Road No.86, Jubilee hills, Hyderabad, Telangana - 500096
               </p>
             </div>
             <div className="flex items-start gap-3">
               <Mail className="text-orange-600 mt-1" />
-              <p>info@lorvensolutions.in</p>
+              <p>Lorvensitsolutions.com</p>
             </div>
             <div className="flex items-start gap-3">
               <Phone className="text-orange-600 mt-1" />
-              <p>+91 9542935109</p>
+              <p>+91 9542935100, 9390575069</p>
             </div>
           </div>
 
@@ -110,9 +110,6 @@ const ContactPage = () => {
         </motion.div>
       </div>
 
-      <div className="mt-12">
-        {/* <Footer /> */}
-      </div>
     </div>
   );
 };

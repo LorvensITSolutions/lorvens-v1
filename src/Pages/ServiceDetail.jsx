@@ -2,7 +2,6 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const services = [
   {
