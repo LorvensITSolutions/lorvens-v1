@@ -10,8 +10,7 @@ import {
   Folder,
 } from "lucide-react";
 import logoImg from "../assets/lorvensIT.png";
-
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const navLinks = [
@@ -22,10 +21,9 @@ const navLinks = [
   { to: "/contact", icon: <Phone size={20} />, label: "Contact" },
 ];
 
-
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +32,8 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="fixed top-0 left-0 w-full bg-[#FFF6E5] shadow-[0_2px_4px_rgba(0,0,0,0.03)] z-50">
@@ -44,10 +44,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link
-            to="/"
-            className="flex items-center"
-          >
+          <Link to="/" className="flex items-center">
             <motion.img
               src={logoImg}
               alt="Lorvens Solutions"
@@ -70,7 +67,11 @@ const Navbar = () => {
             >
               <Link
                 to={link.to}
-                className="flex items-center gap-2 hover:text-orange-600 transition-colors duration-300"
+                className={`flex items-center gap-2 transition-colors duration-300 ${
+                  isActive(link.to)
+                    ? "text-orange-600 font-semibold"
+                    : "hover:text-orange-600"
+                }`}
               >
                 {link.icon}
                 <motion.span whileHover={{ x: 4 }} className="transition-transform">
@@ -113,7 +114,11 @@ const Navbar = () => {
               <Link
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 hover:text-orange-600 transition-all duration-300"
+                className={`flex items-center gap-2 transition-all duration-300 ${
+                  isActive(link.to)
+                    ? "text-orange-600 font-semibold"
+                    : "hover:text-orange-600"
+                }`}
               >
                 {link.icon}
                 <motion.span whileHover={{ x: 3 }}>{link.label}</motion.span>
