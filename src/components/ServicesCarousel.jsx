@@ -60,12 +60,10 @@ const ServicesCarousel = () => {
 
       <div className="max-w-6xl mx-auto relative group">
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           speed={800}
           loop={true}
-          pagination={{ clickable: true }}
-          navigation={true}
           spaceBetween={30}
           breakpoints={{
             320: { slidesPerView: 1 },

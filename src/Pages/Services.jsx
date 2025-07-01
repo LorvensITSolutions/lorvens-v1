@@ -29,7 +29,7 @@ export const services = [
     features: ["iOS & Android", "Cross-Platform", "Performance Optimized"]
   },
     {
-    title: "Degital Marketing",
+    title: "Digital Marketing",
     tagline: "Strategic Marketing Solutions",
     description: "Amplify your brand's reach with data-driven marketing strategies. We combine creativity with analytics to deliver campaigns that build meaningful connections and drive measurable results.",
     image: DIGITAL,
@@ -204,7 +204,7 @@ const Services = () => {
                       ))}
                     </div>
 
-                    <Link to={`/services/${index}`} className="inline-block">
+                    <Link  className="inline-block">
                       <button className="group/btn bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-full font-medium hover:from-orange-600 hover:to-amber-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
                         Explore Solution
                         <span className="inline-block ml-2 group-hover/btn:translate-x-1 transition-transform">→</span>
