@@ -85,7 +85,7 @@ const Testimonials = () => {
               className="bg-white/20 backdrop-blur-md border border-orange-200 rounded-2xl p-6 text-center h-full flex flex-col items-center 
                          shadow-md hover:shadow-orange-200 hover:shadow-lg 
                          transition-transform transform hover:-translate-y-1 
-                         relative before:absolute before:inset-0 before:rounded-2xl before:border-2 before:border-gradient-to-r before:from-orange-400 before:to-pink-500 before:z-[-1]"
+                         relative before:absolute before:inset-0 before:rounded-2xl before:border-2 before:border-gradient-to-r before:from-orange-400 before:to-pink-500 before:z-[-1] min-h-[300px]"
             >
               <img
                 src={testimonial.image}
