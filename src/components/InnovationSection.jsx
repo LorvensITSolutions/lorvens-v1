@@ -13,22 +13,32 @@ const services = [
   {
     title: "Web Development",
     icon: <Lightbulb className="h-12 w-12 text-orange-500" />,
-    desc: "Custom websites that are fast, scalable, and built for performance, aligned with your brand and business goals.",
+    desc: "Custom websites built for speed, scalability & conversions.",
   },
   {
     title: "Mobile Applications",
     icon: <Rocket className="h-12 w-12 text-orange-500" />,
-    desc: "Build native and cross-platform mobile apps with seamless UX and robust functionality for iOS and Android.",
+    desc: "iOS & Android apps with seamless UX & robust performance.",
   },
   {
     title: "Startup Acceleration",
     icon: <Building2 className="h-12 w-12 text-orange-500" />,
-    desc: "LORVENS partners with startups to turn their ideas into real, working MVPs and scalable products.",
+    desc: "Turn ideas into MVPs that attract users & investors.",
   },
   {
     title: "Tech Talent as a Service",
     icon: <UserSearch className="h-12 w-12 text-orange-500" />,
-    desc: "Get access to highly skilled designers, developers, and strategists on demand to supercharge your project.",
+    desc: "Access expert designers & developers to scale faster.",
+  },
+  {
+    title: "Digital Product Design (UI/UX)",
+    icon: <UserSearch className="h-12 w-12 text-orange-500" />,
+    desc: "User-first designs that blend beauty with usability.",
+  },
+  {
+    title: "Cloud & DevOps Solutions",
+    icon: <Rocket className="h-12 w-12 text-orange-500" />,
+    desc: "Secure, scalable, and future-ready deployments.",
   },
 ];
 
@@ -57,7 +67,7 @@ const InnovationSection = () => {
           variants={textVariant(0.1)}
           className="text-4xl md:text-5xl font-bold text-gray-900"
         >
-          Innovation @ LORVENS
+          What We Build for You
         </motion.h2>
         <motion.div
           variants={scale(0.2)}
@@ -67,10 +77,7 @@ const InnovationSection = () => {
           variants={fadeIn("up", 0.3)}
           className="max-w-3xl mx-auto text-gray-700 text-lg"
         >
-          At <span className="text-orange-500 font-semibold">LORVENS</span>,
-          innovation isn’t a service — it’s our core DNA. We create elegant,
-          scalable digital products by combining deep tech expertise with
-          creativity and strategy.
+          From idea to launch — we craft solutions that are fast, scalable, and designed for impact.
         </motion.p>
       </motion.div>
 

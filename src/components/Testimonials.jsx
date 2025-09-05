@@ -13,7 +13,7 @@ const testimonials = [
     rating: 5,
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     feedback:
-      "Lorvens truly exceeded our expectations. Their team was responsive, innovative, and highly skilled in delivering a top-notch digital solution.",
+      "Yes LORVENS truly exceeded our expectations. Their team was responsive, innovative, and highly skilled in delivering a top-notch digital solution.",
   },
   {
     name: "Priya Sharma",
@@ -29,7 +29,7 @@ const testimonials = [
     rating: 5,
     image: "https://randomuser.me/api/portraits/men/65.jpg",
     feedback:
-      "We collaborated with Lorvens for cloud deployment. Their understanding of modern infra helped us launch without issues.",
+      "We collaborated with Yes LORVENS for cloud deployment. Their understanding of modern infra helped us launch without issues.",
   },
 ];
 
