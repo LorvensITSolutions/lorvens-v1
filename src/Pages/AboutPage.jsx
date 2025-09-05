@@ -157,67 +157,56 @@ const IntroSection = () => {
         </motion.h1>
 
         {/* Enhanced Description Grid */}
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <motion.div 
-            className="text-left space-y-6"
-            whileInView={{ x: [-20, 0] }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-lg sm:text-xl leading-relaxed text-gray-700">
-              At <motion.span 
-                className="font-bold text-orange-600 relative inline-block"
-                whileHover={{ scale: 1.05 }}
-              >
-                YES LORVENS
-                <motion.div
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 1 }}
-                />
-              </motion.span>, we're not just another tech company. We're digital architects crafting tomorrow's solutions today.
-            </p>
-            
-            <motion.div
-              className="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-orange-100 shadow-sm"
-              whileHover={{ scale: 1.02, y: -2 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Brain className="h-8 w-8 text-orange-600" />
-              <div>
-                <h3 className="font-bold text-gray-900">Innovation-First Mindset</h3>
-                <p className="text-sm text-gray-600">Transforming ideas into impact</p>
-              </div>
-            </motion.div>
-          </motion.div>
+ {/* Enhanced Description Grid */}
+<motion.div
+  className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 0.5 }}
+>
+  {/* Row 1 - Text only */}
+  <motion.p 
+    className="text-lg sm:text-xl leading-relaxed text-gray-700"
+    whileInView={{ x: [-20, 0] }}
+    transition={{ duration: 0.8 }}
+  >
+    At <span className="font-bold text-orange-600">YES LORVENS</span>, we're not just another tech company. We're digital architects crafting tomorrow's solutions today.
+  </motion.p>
 
-          <motion.div 
-            className="text-left space-y-6"
-            whileInView={{ x: [20, 0] }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-base sm:text-lg leading-relaxed text-gray-600">
-              Our mission is crystal clear: empower businesses to grow smarter, faster, and stronger with cutting-edge digital solutions that make a real difference.
-            </p>
-            
-            <motion.div
-              className="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-purple-100 shadow-sm"
-              whileHover={{ scale: 1.02, y: -2 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Heart className="h-8 w-8 text-purple-600" />
-              <div>
-                <h3 className="font-bold text-gray-900">Human-Centered Design</h3>
-                <p className="text-sm text-gray-600">Technology that serves people</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+  <motion.p 
+    className="text-base sm:text-lg leading-relaxed text-gray-600"
+    whileInView={{ x: [20, 0] }}
+    transition={{ duration: 0.8 }}
+  >
+    Our mission is crystal clear: empower businesses to grow smarter, faster, and stronger with cutting-edge digital solutions that make a real difference.
+  </motion.p>
+
+  {/* Row 2 - Cards only */}
+  <motion.div
+    className="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-orange-100 shadow-sm"
+    whileHover={{ scale: 1.02, y: -2 }}
+    transition={{ duration: 0.3 }}
+  >
+    <Brain className="h-8 w-8 text-orange-600" />
+    <div>
+      <h3 className="font-bold text-gray-900">Innovation-First Mindset</h3>
+      <p className="text-sm text-gray-600">Transforming ideas into impact</p>
+    </div>
+  </motion.div>
+
+  <motion.div
+    className="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-orange-100 shadow-sm"
+    whileHover={{ scale: 1.02, y: -2 }}
+    transition={{ duration: 0.3 }}
+  >
+    <Heart className="h-8 w-8 text-purple-600" />
+    <div>
+      <h3 className="font-bold text-gray-900">Human-Centered Design</h3>
+      <p className="text-sm text-gray-600">Technology that serves people</p>
+    </div>
+  </motion.div>
+</motion.div>
+
 
         {/* Interactive Stats */}
         <motion.div
@@ -1165,7 +1154,7 @@ const CallToActionSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <Link to="/projects">
+          <Link to="/contact">
   <motion.button
     className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 font-bold
                rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"

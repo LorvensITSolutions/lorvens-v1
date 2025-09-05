@@ -621,7 +621,7 @@ const HomePage = () => {
       </section>
 
       {/* Scroll to Top Indicator */}
-      <motion.div
+      {/* <motion.div
         className="fixed bottom-8 right-8 z-50"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -635,7 +635,7 @@ const HomePage = () => {
         >
           <ArrowRight className="rotate-[-90deg]" size={20} />
         </motion.button>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
