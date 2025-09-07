@@ -1,7 +1,25 @@
 @import "tailwindcss";
 
-.scrollbar-hide::-webkit-scrollbar {
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow: auto; /* Ensure scrolling still works */
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
   display: none;
+}
+
+/* Optional: hide scrollbars for all scrollable elements too */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 @keyframes spin-slow {
   0% {
