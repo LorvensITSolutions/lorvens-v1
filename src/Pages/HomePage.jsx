@@ -534,41 +534,42 @@ const HomePage = () => {
             custom={3}
           >
             {/* Primary CTA */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                to="/contact"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 
-                           bg-gradient-to-r from-orange-600 to-yellow-500 text-white 
-                           font-bold text-lg rounded-2xl shadow-xl 
-                           hover:shadow-2xl transition-all duration-300 overflow-hidden"
-              >
-                {/* Button Glow Effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-400 opacity-0 group-hover:opacity-20"
-                  animate={{
-                    x: ["-100%", "100%"],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "linear",
-                  }}
-                />
-                
-                <span className="relative z-10">Start Your Project</span>
-                <motion.div
-                  className="relative z-10"
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight size={20} />
-                </motion.div>
-              </Link>
-            </motion.div>
+           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+  <Link
+    to="/contact"
+    className="group relative inline-flex items-center gap-3 px-8 py-4 
+               bg-gradient-to-r from-orange-600 to-yellow-500 text-white 
+               font-bold text-lg rounded-2xl shadow-xl 
+               hover:shadow-2xl transition-all duration-300 overflow-hidden"
+  >
+    {/* Button Glow Effect */}
+    <motion.div
+      className="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-400 
+                 opacity-0 group-hover:opacity-20 pointer-events-none"
+      animate={{
+        x: ["-100%", "100%"],
+      }}
+      transition={{
+        duration: 1.5,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "linear",
+      }}
+    />
+
+    <span className="relative z-10">Start Your Project</span>
+
+    <motion.div
+      className="relative z-10"
+      animate={{ x: [0, 5, 0] }}
+      transition={{ duration: 1.5, repeat: Infinity }}
+    >
+      <ArrowRight size={20} />
+    </motion.div>
+  </Link>
+</motion.div>
+
+            
 
             {/* Secondary CTA */}
            <motion.div
