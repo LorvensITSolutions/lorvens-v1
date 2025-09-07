@@ -11,6 +11,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import useContactStore from "../stores/useContactStore"; // adjust path if needed
+import "./ProjectPage.css"; // Import the CSS file for custom styles
 
 // --- ParallaxBackground (same as your previous implementation) ---
 const ParallaxBackground = () => {
@@ -110,7 +111,7 @@ const ContactPage = () => {
       {/* Hero */}
       <motion.section
         style={{ y: headerY, opacity: headerOpacity }}
-        className="relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-28 overflow-hidden"
+        className="icon-zap relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-28 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 text-center relative z-10">
           <div className="inline-block mb-6">

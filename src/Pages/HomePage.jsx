@@ -23,10 +23,10 @@ const fadeInUp = {
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
-    transition: { 
-      delay: i * 0.15, 
-      duration: 0.8, 
-      ease: [0.25, 0.46, 0.45, 0.94] 
+    transition: {
+      delay: i * 0.15,
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
     },
   }),
 };
@@ -43,8 +43,8 @@ const staggerContainer = {
 };
 
 const cardVariants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 50,
     scale: 0.9,
     rotateX: 45,
@@ -54,8 +54,8 @@ const cardVariants = {
     y: 0,
     scale: 1,
     rotateX: 0,
-    transition: { 
-      duration: 0.7, 
+    transition: {
+      duration: 0.7,
       ease: [0.25, 0.46, 0.45, 0.94],
       type: "spring",
       stiffness: 100,
@@ -67,7 +67,7 @@ const cardVariants = {
     y: -8,
     rotateY: 5,
     boxShadow: "0px 20px 40px rgba(255, 165, 0, 0.25)",
-    transition: { 
+    transition: {
       duration: 0.3,
       ease: "easeOut",
     },
@@ -76,18 +76,18 @@ const cardVariants = {
 
 const iconVariants = {
   hidden: { scale: 0, rotate: -180 },
-  visible: { 
-    scale: 1, 
+  visible: {
+    scale: 1,
     rotate: 0,
-    transition: { 
+    transition: {
       type: "spring",
       stiffness: 200,
       damping: 15,
       delay: 0.2,
     },
   },
-  hover: { 
-    scale: 1.2, 
+  hover: {
+    scale: 1.2,
     rotate: 10,
     transition: { duration: 0.2 },
   },
@@ -95,10 +95,10 @@ const iconVariants = {
 
 const glowVariants = {
   hidden: { opacity: 0, scale: 0 },
-  visible: { 
-    opacity: [0, 0.5, 0], 
+  visible: {
+    opacity: [0, 0.5, 0],
     scale: [0, 1.5, 2],
-    transition: { 
+    transition: {
       duration: 2,
       repeat: Infinity,
       repeatType: "loop",
@@ -194,9 +194,9 @@ const HomePage = () => {
         className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-pink-200/20 to-orange-200/20 rounded-full blur-3xl"
         variants={floatingVariants}
         animate="animate"
-        style={{ 
+        style={{
           y: useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]),
-          opacity: useTransform(scrollYProgress, [0.5, 1], [1, 0])
+          opacity: useTransform(scrollYProgress, [0.5, 1], [1, 0]),
         }}
       />
 
@@ -245,10 +245,7 @@ const HomePage = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {/* Enhanced Header */}
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-          >
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-800 font-medium mb-4"
               whileHover={{ scale: 1.05 }}
@@ -257,25 +254,26 @@ const HomePage = () => {
               <Sparkles size={16} />
               <span>Why Choose Us</span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-[#0B2149] via-orange-600 to-[#0B2149] bg-clip-text text-transparent"
               variants={fadeInUp}
             >
               Your Success, Our Mission
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
               variants={fadeInUp}
             >
-              Choosing the right partner can make or break your digital journey. 
-              Here's why industry leaders trust us with their most ambitious projects.
+              Choosing the right partner can make or break your digital journey.
+              Here's why industry leaders trust us with their most ambitious
+              projects.
             </motion.p>
           </motion.div>
 
           {/* Enhanced Grid Cards */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
           >
@@ -331,13 +329,11 @@ const HomePage = () => {
                       whileHover={{ opacity: 1, scale: 1.2 }}
                       transition={{ duration: 0.3 }}
                     />
-                    <div className="relative z-10">
-                      {card.icon}
-                    </div>
+                    <div className="relative z-10">{card.icon}</div>
                   </motion.div>
 
                   {/* Enhanced Title */}
-                  <motion.h3 
+                  <motion.h3
                     className="text-2xl font-bold text-[#0B2149] mb-3 group-hover:text-orange-700 transition-colors duration-300"
                     initial={{ x: -20, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -347,25 +343,25 @@ const HomePage = () => {
                   </motion.h3>
 
                   {/* Animated Divider */}
-                  <motion.div 
+                  <motion.div
                     className="flex items-center gap-2 mb-4"
                     initial={{ width: 0 }}
                     whileInView={{ width: "auto" }}
                     transition={{ delay: 0.4, duration: 0.6 }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="h-1 w-12 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-full"
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
                       transition={{ delay: 0.5, duration: 0.5 }}
                     />
-                    <motion.div 
+                    <motion.div
                       className="h-1 w-4 bg-gradient-to-r from-yellow-500 to-orange-400 rounded-full"
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
                       transition={{ delay: 0.7, duration: 0.5 }}
                     />
-                    <motion.div 
+                    <motion.div
                       className="h-1 w-2 bg-orange-300 rounded-full"
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
@@ -374,7 +370,7 @@ const HomePage = () => {
                   </motion.div>
 
                   {/* Enhanced Description */}
-                  <motion.p 
+                  <motion.p
                     className="text-gray-700 text-base leading-relaxed flex-grow group-hover:text-gray-800 transition-colors duration-300"
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -469,13 +465,10 @@ const HomePage = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           {/* Enhanced CTA Header */}
-          <motion.div
-            className="mb-8"
-            variants={fadeInUp}
-          >
+          <motion.div className="mb-8" variants={fadeInUp}>
             <motion.div
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-100 to-yellow-100 rounded-full text-orange-800 font-semibold mb-6 shadow-lg"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 boxShadow: "0px 10px 30px rgba(255, 165, 0, 0.3)",
               }}
@@ -522,9 +515,13 @@ const HomePage = () => {
             variants={fadeInUp}
             custom={2}
           >
-            Transform your vision into reality with our cutting-edge digital solutions. 
-            Whether you're a startup dreaming big or an enterprise scaling new heights — 
-            <span className="text-orange-600 font-semibold"> we're your catalyst for success.</span>
+            Transform your vision into reality with our cutting-edge digital
+            solutions. Whether you're a startup dreaming big or an enterprise
+            scaling new heights —
+            <span className="text-orange-600 font-semibold">
+              {" "}
+              we're your catalyst for success.
+            </span>
           </motion.p>
 
           {/* Enhanced CTA Buttons */}
@@ -534,60 +531,54 @@ const HomePage = () => {
             custom={3}
           >
             {/* Primary CTA */}
-           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-  <Link
-    to="/contact"
-    className="group relative inline-flex items-center gap-3 px-8 py-4 
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 
                bg-gradient-to-r from-orange-600 to-yellow-500 text-white 
                font-bold text-lg rounded-2xl shadow-xl 
                hover:shadow-2xl transition-all duration-300 overflow-hidden"
-  >
-    {/* Button Glow Effect */}
-    <motion.div
-      className="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-400 
+              >
+                {/* Button Glow Effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-400 
                  opacity-0 group-hover:opacity-20 pointer-events-none"
-      animate={{
-        x: ["-100%", "100%"],
-      }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        repeatType: "loop",
-        ease: "linear",
-      }}
-    />
+                  animate={{
+                    x: ["-100%", "100%"],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    ease: "linear",
+                  }}
+                />
 
-    <span className="relative z-10">Start Your Project</span>
+                <span className="relative z-10">Start Your Project</span>
 
-    <motion.div
-      className="relative z-10"
-      animate={{ x: [0, 5, 0] }}
-      transition={{ duration: 1.5, repeat: Infinity }}
-    >
-      <ArrowRight size={20} />
-    </motion.div>
-  </Link>
-</motion.div>
-
-            
+                <motion.div
+                  className="relative z-10"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRight size={20} />
+                </motion.div>
+              </Link>
+            </motion.div>
 
             {/* Secondary CTA */}
-           <motion.div
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
->
-  <Link
-    to="/projects"
-    className="inline-flex items-center gap-3 px-8 py-4 
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-3 px-8 py-4 
                bg-white/80 backdrop-blur-sm text-orange-600 
                font-semibold text-lg rounded-2xl border-2 border-orange-200
                hover:border-orange-400 hover:bg-white transition-all duration-300 shadow-lg"
-  >
-    <span>View Our Work</span>
-    <Monitor size={18} />
-  </Link>
-</motion.div>
-
+              >
+                <span>View Our Work</span>
+                <Monitor size={18} />
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Trust Indicators */}
@@ -596,21 +587,21 @@ const HomePage = () => {
             variants={fadeInUp}
             custom={4}
           >
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2"
               whileHover={{ scale: 1.1, color: "#ea580c" }}
             >
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="font-medium"> Expireance Team</span>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2"
               whileHover={{ scale: 1.1, color: "#ea580c" }}
             >
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
               <span className="font-medium"> 100% Satisfaction Guarantee</span>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2"
               whileHover={{ scale: 1.1, color: "#ea580c" }}
             >

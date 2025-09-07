@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./ProjectPage.css";
 import { Link } from "react-router-dom";
 import { 
   
@@ -529,8 +530,8 @@ const ProjectsPage = () => {
       
       {/* Enhanced Header with Parallax */}
       <motion.div 
-        style={{ y: headerY, opacity: headerOpacity }}
-        className="relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-24 overflow-hidden"
+        style={{ y: headerY, opacity: headerOpacity,  }}
+        className=" icon-zap relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-24 overflow-hidden"
       >
         {/* Animated background elements */}
         <div className="absolute inset-0">
@@ -571,7 +572,7 @@ const ProjectsPage = () => {
               whileHover={{ scale: 1.05 }}
               className="inline-block mb-4"
             >
-              <Zap size={32} className="text-white mx-auto" />
+              <Zap size={48} className=" text-white mx-auto" />
             </motion.div>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white">
               Our 
