@@ -517,6 +517,16 @@ const BeliefSection = () => {
   const y1 = useTransform(scrollY, [1000, 2000], [0, -100]);
   const y2 = useTransform(scrollY, [1000, 2000], [0, -50]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  // detect mobile on mount + resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // run once
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const beliefs = [
     {
       title: "Our Vision",
@@ -546,13 +556,13 @@ const BeliefSection = () => {
 
   return (
     <section className="relative py-24 px-6 lg:px-20 overflow-hidden">
-      {/* Dynamic Background */}
+      {/* Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-orange-50/80 via-white to-purple-50/80"
         style={{ y: y1 }}
       />
-      
-      {/* Floating Geometric Shapes */}
+
+      {/* Shapes */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 border-2 border-orange-300 rotate-45 opacity-20"
         animate={{ rotate: [45, 135, 45] }}
@@ -567,7 +577,7 @@ const BeliefSection = () => {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Enhanced Section Header */}
+        {/* Section Header */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 50 }}
@@ -621,7 +631,7 @@ const BeliefSection = () => {
           </motion.p>
         </motion.div>
 
-        {/* Enhanced Beliefs Cards */}
+        {/* Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {beliefs.map((belief, index) => (
             <motion.div
@@ -642,120 +652,62 @@ const BeliefSection = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              {/* Card Container */}
               <motion.div
                 className="relative h-full p-8 rounded-3xl bg-white/90 backdrop-blur-sm shadow-xl border border-white/20
                           group-hover:shadow-2xl transition-all duration-500 overflow-hidden"
-                whileHover={{ 
-                  boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
-                }}
               >
-                {/* Dynamic Background Gradient */}
+                {/* Gradient */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${belief.gradient} opacity-0 
                               group-hover:opacity-5 transition-opacity duration-500`}
-                  whileHover={{ opacity: 0.1 }}
                 ></motion.div>
 
-                {/* Animated Particles */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  {[...Array(3)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className={`absolute w-1 h-1 bg-${belief.particles}-400 rounded-full opacity-0 group-hover:opacity-60`}
-                      initial={{ 
-                        x: Math.random() * 300,
-                        y: Math.random() * 200,
-                      }}
-                      animate={{ 
-                        x: Math.random() * 300,
-                        y: Math.random() * 200,
-                      }}
-                      transition={{
-                        duration: 3 + Math.random() * 2,
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Enhanced Icon */}
+                {/* Icon */}
                 <motion.div
                   className={`relative z-10 inline-flex items-center justify-center w-16 h-16 
                              bg-gradient-to-br ${belief.gradient} rounded-2xl shadow-lg mb-6 group-hover:shadow-xl`}
-                  whileHover={{ 
-                    scale: 1.15,
-                    rotate: [0, -5, 5, 0],
-                    transition: { duration: 0.5 }
-                  }}
                 >
-                  <div className="text-white">
-                    {belief.icon}
-                  </div>
-                  
-                  {/* Icon Glow Effect */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${belief.gradient} rounded-2xl blur-md opacity-0 group-hover:opacity-30`}
-                    whileHover={{ scale: 1.5 }}
-                    transition={{ duration: 0.3 }}
-                  />
+                  <div className="text-white">{belief.icon}</div>
                 </motion.div>
 
-                {/* Enhanced Content */}
+                {/* Content */}
                 <div className="relative z-10">
                   <motion.h3
                     className="text-2xl font-bold text-gray-900 mb-6 
                               group-hover:text-orange-700 transition-colors duration-300"
-                    whileHover={{ x: 5 }}
                   >
                     {belief.title}
                   </motion.h3>
                   
-                  <motion.p
-                    className="text-gray-700 text-base leading-relaxed mb-6"
-                    initial={{ opacity: 0.9 }}
-                    whileInView={{ opacity: 1 }}
-                  >
+                  <motion.p className="text-gray-700 text-base leading-relaxed mb-6">
                     {belief.desc}
                   </motion.p>
                   
-                  {/* Expandable Extra Content */}
-                  <motion.div
-                    className="overflow-hidden"
-                    initial={{ height: 0, opacity: 0 }}
-                    whileInView={{ height: "auto", opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                  >
+                  {/* Extra line */}
+                  {isMobile ? (
+                    // always visible on mobile
+                    <p className="text-sm text-gray-600 leading-relaxed italic border-l-4 border-orange-200 pl-4">
+                      {belief.extra}
+                    </p>
+                  ) : (
+                    // hover on desktop
                     <motion.p
                       className="text-sm text-gray-600 leading-relaxed italic border-l-4 border-orange-200 pl-4
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      whileHover={{ x: 5 }}
                     >
                       {belief.extra}
                     </motion.p>
-                  </motion.div>
+                  )}
                 </div>
 
-                {/* Interactive Elements */}
+                {/* Arrow */}
                 <motion.div
                   className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  whileHover={{ scale: 1.2, rotate: 15 }}
                 >
                   <div className={`w-8 h-8 bg-gradient-to-r ${belief.gradient} rounded-full flex items-center justify-center shadow-lg`}>
                     <ArrowRight className="h-4 w-4 text-white" />
                   </div>
                 </motion.div>
-
-                {/* Enhanced Border Effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-transparent 
-                           group-hover:border-orange-200 transition-all duration-300"
-                  whileHover={{
-                    borderColor: "rgba(251, 146, 60, 0.5)",
-                    boxShadow: "inset 0 0 20px rgba(251, 146, 60, 0.1)"
-                  }}
-                ></motion.div>
               </motion.div>
             </motion.div>
           ))}
@@ -764,7 +716,6 @@ const BeliefSection = () => {
     </section>
   );
 };
-
 // Enhanced Milestones Section with More Interactivity
 const MilestonesSection = () => {
   const { scrollY } = useScroll();
