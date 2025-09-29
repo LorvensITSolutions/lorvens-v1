@@ -137,7 +137,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "Digital Marketing ",
+    title: "Digital Marketing",
     subtitle: "Growth-Driven Strategy",
     description: "A results-driven campaign combining SEO, Google Ads, social media marketing, and content strategies to deliver measurable growth and brand awareness.",
     images: [
