@@ -144,7 +144,7 @@ const IntroSection = () => {
             style={{ backgroundSize: "200% 100%" }}
             transition={{ duration: 5, repeat: Infinity }}
           >
-            Who We
+            Who We 
           </motion.span>{" "}
           <motion.span
             className="inline-block bg-gradient-to-r from-orange-600 via-red-500 to-pink-600 bg-clip-text text-transparent"
