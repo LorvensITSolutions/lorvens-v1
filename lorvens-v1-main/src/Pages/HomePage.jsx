@@ -259,7 +259,7 @@ const HomePage = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-[#0B2149] via-orange-600 to-[#0B2149] bg-clip-text text-transparent"
               variants={fadeInUp}
             >
-              Yours Success, Our Mission
+              Your Success, Our Mission
             </motion.h2>
 
             <motion.p
