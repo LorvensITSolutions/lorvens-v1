@@ -4,7 +4,7 @@ import {
   Instagram,
   Linkedin,
   Facebook,
-  X,
+  Twitter,
   Phone,
   Mail,
   MapPin,
@@ -19,27 +19,27 @@ const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="bg-[#FFF6E5] text-[#1F1F1F] pt-12 pb-6 px-4 md:px-12 border-t border-orange-200"
+      className="bg-[#FFF6E5] text-[#1F1F1F] pt-12 pb-6 px-4 sm:px-6 md:px-12 border-t border-orange-200"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Brand */}
-        <div>
+        <div className="flex flex-col">
           <h2 className="text-2xl font-bold text-[#0B2149] mb-2 tracking-wide">
             Yes LORVENS
           </h2>
           <p className="text-sm text-gray-700 mb-4">
             Crafting innovative tech solutions tailored to your business goals.
           </p>
-          <div className="flex gap-4 mt-2">
+          <div className="flex gap-4 mt-2 flex-wrap">
             {/* Instagram */}
             <motion.a
               href="https://www.instagram.com/yeslorvenssolutionspvt"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-orange-600 hover:text-orange-700 transition"
+              className="text-orange-600 hover:text-orange-700 transition cursor-pointer"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-6 h-6" />
             </motion.a>
 
             {/* LinkedIn */}
@@ -48,9 +48,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-orange-600 hover:text-orange-700 transition"
+              className="text-orange-600 hover:text-orange-700 transition cursor-pointer"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-6 h-6" />
             </motion.a>
 
             {/* Facebook */}
@@ -59,27 +59,27 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-orange-600 hover:text-orange-700 transition"
+              className="text-orange-600 hover:text-orange-700 transition cursor-pointer"
             >
-              <Facebook className="w-5 h-5" />
+              <Facebook className="w-6 h-6" />
             </motion.a>
 
-            {/* Replace Twitter with X */}
+            {/* Twitter/X */}
             <motion.a
-              href="#"
+              href="https://twitter.com/yeslorvens"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-orange-600 hover:text-orange-700 transition"
+              className="text-orange-600 hover:text-orange-700 transition cursor-pointer"
             >
-              <X className="w-5 h-5" />
+              <Twitter className="w-6 h-6" />
             </motion.a>
           </div>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">
-            Quick Links
-          </h3>
+          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link to="/" className="hover:text-orange-600 transition">
@@ -158,9 +158,7 @@ const Footer = () => {
 
         {/* Contact */}
         <div>
-          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">
-            Contact Us
-          </h3>
+          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Contact Us</h3>
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-orange-600" /> +91 7013814030
