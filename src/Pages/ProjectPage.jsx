@@ -19,7 +19,9 @@ import {
   ChevronRight
 } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion";
-
+import onlineshop from "../assets/onlineshop.jpeg";
+import onlineshopp from "../assets/onlineshopp.jpeg";
+import onlineshoppp from "../assets/onlineshoppp.jpeg";
 // ✨ Enhanced Animation Variants
 const slideVariants = {
   hiddenLeft: { 
@@ -82,99 +84,98 @@ const floatingVariants = {
 // 🔥 Enhanced Projects Data
 const projects = [
   {
-    id: 1,
+    id: 5,
     title: "E-Commerce Platform Development",
-    subtitle: "Next-Gen Shopping Experience",
-    description: "A comprehensive e-commerce solution built with modern technologies, featuring user authentication, payment integration, inventory management, and admin dashboard with real-time analytics.",
-    images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1549921296-3a0431d42d36?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
-    ],
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    duration: "6 months",
-    team: "5 developers",
-    category: "Web Development",
-    status: "Completed",
-    impact: "300% increase in sales",
-    color: "from-blue-500 to-purple-600"
-  },
-  {
-    id: 2,
-    title: "AI-ML Integration Platform",
-    subtitle: "Intelligent Business Analytics",
-    description: "Advanced analytics platform using machine learning algorithms to provide business intelligence, predictive analytics, and automated decision-making capabilities.",
-    images: [
-      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
-    ],
-    technologies: ["Python", "TensorFlow", "D3.js", "PostgreSQL"],
-    duration: "10 months",
-    team: "4 developers",
-    category: "AI/ML",
-    status: "Completed",
-    impact: "85% accuracy improvement",
-    color: "from-green-500 to-teal-600"
-  },
-  {
-    id: 3,
-    title: "Educational Management System",
-    subtitle: "Smart Learning Environment",
-    description: "A modern and interactive school website built with the MERN stack. Features include student portals, teacher dashboards, online admissions, and virtual classroom integration.",
-    images: [
-      "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-    ],
-    technologies: ["MongoDB", "Express.js", "React", "Node.js"],
-    duration: "5 months",
-    team: "6 developers",
-    category: "Web Development",
-    status: "Completed",
-    impact: "50% efficiency boost",
-    color: "from-orange-500 to-red-600"
-  },
-  {
-    id: 4,
-    title: "Digital Marketing",
-    subtitle: "Growth-Driven Strategy",
-    description: "A results-driven campaign combining SEO, Google Ads, social media marketing, and content strategies to deliver measurable growth and brand awareness.",
-    images: [
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1200&q=80",
-    ],
-    technologies: ["SEO", "Google Ads", "Analytics", "Social Media"],
-    duration: "4 months",
-    team: "3 marketers",
-    category: "Digital Marketing",
-    status: "Completed",
-    impact: "400% ROI increase",
-    color: "from-pink-500 to-violet-600"
-  },
-{
-  id: 3,
-  title: "UI/UX Design Project",
-  subtitle: "Modern User-Centered Experience",
-  description:
-    "A sleek and intuitive UI/UX design project focused on delivering engaging, user-friendly, and accessible digital experiences. Includes interactive prototypes, responsive layouts, and usability testing for seamless navigation.",
-  images: [
-    "https://images.unsplash.com/photo-1604147495798-57beb5d6af73?auto=format&fit=crop&w=1200&q=80", // Designer working on UI mockups
-    "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80", // Wireframing & sketches
-    "https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&w=1200&q=80", // Figma UI/UX on screen
-  ],
-  technologies: ["Figma", "Adobe XD", "Sketch", "InVision"],
-  duration: "2 months",
-  team: "3 designers",
-  category: "UI/UX Development",
-  status: "COMPLETED",
-  impact: "Enhanced usability & engagement",
-  color: "from-purple-500 to-pink-600",
-}
-];
+        subtitle: "Next-Gen Shopping Experience",
+        description: "A comprehensive e-commerce solution built with modern technologies, featuring user authentication, payment integration, inventory management, and admin dashboard with real-time analytics.",
+        images: [
+          onlineshop,
+          onlineshopp,
+          onlineshoppp,
+        ],
+        technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+        duration: "6 months",
+        team: "5 developers",
+        category: "Web Development",
+        status: "Completed",
+        impact: "300% increase in sales",
+        color: "from-blue-500 to-purple-600"
+      },
+      {
+        id: 2,
+        title: "AI-ML Integration Platform",
+        subtitle: "Intelligent Business Analytics",
+        description: "Advanced analytics platform using machine learning algorithms to provide business intelligence, predictive analytics, and automated decision-making capabilities.",
+        images: [
+          "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+        ],
+        technologies: ["Python", "TensorFlow", "D3.js", "PostgreSQL"],
+        duration: "10 months",
+        team: "4 developers",
+        category: "AI/ML",
+        status: "Completed",
+        impact: "85% accuracy improvement",
+        color: "from-green-500 to-teal-600"
+      },
+      {
+        id: 3,
+        title: "Educational Management System",
+        subtitle: "Smart Learning Environment",
+        description: "A modern and interactive school website built with the MERN stack. Features include student portals, teacher dashboards, online admissions, and virtual classroom integration.",
+        images: [
+          "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+        ],
+        technologies: ["MongoDB", "Express.js", "React", "Node.js"],
+        duration: "5 months",
+        team: "6 developers",
+        category: "Web Development",
+        status: "Completed",
+        impact: "50% efficiency boost",
+        color: "from-orange-500 to-red-600"
+      },
+      {
+        id: 4,
+        title: "Digital Marketing",
+        subtitle: "Growth-Driven Strategy",
+        description: "A results-driven campaign combining SEO, Google Ads, social media marketing, and content strategies to deliver measurable growth and brand awareness.",
+        images: [
+          "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1200&q=80",
+        ],
+        technologies: ["SEO", "Google Ads", "Analytics", "Social Media"],
+        duration: "4 months",
+        team: "3 marketers",
+        category: "Digital Marketing",
+        status: "Completed",
+        impact: "400% ROI increase",
+        color: "from-pink-500 to-violet-600"
+      },
+      {
+        id: 5,
+        title: "UI/UX Design Project",
+        subtitle: "Modern User-Centered Experience",
+        description:
+          "A sleek and intuitive UI/UX design project focused on delivering engaging, user-friendly, and accessible digital experiences. Includes interactive prototypes, responsive layouts, and usability testing for seamless navigation.",
+        images: [
+          "https://images.unsplash.com/photo-1604147495798-57beb5d6af73?auto=format&fit=crop&w=1200&q=80", // Designer working on UI mockups
+          "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80", // Wireframing & sketches
+          "https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&w=1200&q=80", // Figma UI/UX on screen
+        ],
+        technologies: ["Figma", "Adobe XD", "Sketch", "InVision"],
+        duration: "2 months",
+        team: "3 designers",
+        category: "UI/UX Development",
+        status: "COMPLETED",
+        impact: "Enhanced usability & engagement",
+        color: "from-purple-500 to-pink-600"
+      }
 
-// 🎯 Parallax Background Component
+    ]
 const ParallaxBackground = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
