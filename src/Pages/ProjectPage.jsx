@@ -22,6 +22,19 @@ import { motion, AnimatePresence, useScroll, useTransform, useInView } from "fra
 import onlineshop from "../assets/onlineshop.jpeg";
 import onlineshopp from "../assets/onlineshopp.jpeg";
 import onlineshoppp from "../assets/onlineshoppp.jpeg";
+
+import uiux from "../assets/uiux.jpeg";
+import uiuxx from "../assets/uiuxx.jpeg";
+import uiuxxx from "../assets/uiuxxx.jpeg";
+
+import digital from "../assets/digital.jpeg";
+import digitall from "../assets/digitall.jpeg";
+import digitalll from "../assets/digitalll.jpeg";
+
+import learn from "../assets/learn.jpeg";
+import learnn from "../assets/learnn.jpeg";
+import learnnn from "../assets/learnnn.jpeg";
+
 // ✨ Enhanced Animation Variants
 const slideVariants = {
   hiddenLeft: { 
@@ -99,7 +112,7 @@ const projects = [
         category: "Web Development",
         status: "Completed",
         impact: "300% increase in sales",
-        color: "from-blue-500 to-purple-600"
+        color: "from-blue-500 to-purple-600" 
       },
       {
         id: 2,
@@ -107,9 +120,9 @@ const projects = [
         subtitle: "Intelligent Business Analytics",
         description: "Advanced analytics platform using machine learning algorithms to provide business intelligence, predictive analytics, and automated decision-making capabilities.",
         images: [
-          "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+        learn,
+        learnn,
+        learnnn,
         ],
         technologies: ["Python", "TensorFlow", "D3.js", "PostgreSQL"],
         duration: "10 months",
@@ -143,9 +156,9 @@ const projects = [
         subtitle: "Growth-Driven Strategy",
         description: "A results-driven campaign combining SEO, Google Ads, social media marketing, and content strategies to deliver measurable growth and brand awareness.",
         images: [
-          "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1200&q=80",
+          digital,
+          digitall,
+          digitalll,
         ],
         technologies: ["SEO", "Google Ads", "Analytics", "Social Media"],
         duration: "4 months",
@@ -162,9 +175,10 @@ const projects = [
         description:
           "A sleek and intuitive UI/UX design project focused on delivering engaging, user-friendly, and accessible digital experiences. Includes interactive prototypes, responsive layouts, and usability testing for seamless navigation.",
         images: [
-          "https://images.unsplash.com/photo-1604147495798-57beb5d6af73?auto=format&fit=crop&w=1200&q=80", // Designer working on UI mockups
-          "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80", // Wireframing & sketches
-          "https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&w=1200&q=80", // Figma UI/UX on screen
+          uiux,
+          uiuxx,
+          uiuxxx,
+          
         ],
         technologies: ["Figma", "Adobe XD", "Sketch", "InVision"],
         duration: "2 months",
