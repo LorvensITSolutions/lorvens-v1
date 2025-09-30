@@ -4,7 +4,7 @@ import {
   Instagram,
   Linkedin,
   Facebook,
-  Twitter,
+  X,
   Phone,
   Mail,
   MapPin,
@@ -31,16 +31,47 @@ const Footer = () => {
             Crafting innovative tech solutions tailored to your business goals.
           </p>
           <div className="flex gap-4 mt-2">
-            {[Instagram, Linkedin, Facebook, Twitter].map((Icon, i) => (
-              <motion.a
-                key={i}
-                href="#"
-                whileHover={{ scale: 1.2 }}
-                className="text-orange-600 hover:text-orange-700 transition"
-              >
-                <Icon className="w-5 h-5" />
-              </motion.a>
-            ))}
+            {/* Instagram */}
+            <motion.a
+              href="https://www.instagram.com/yeslorvenssolutionspvt"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="text-orange-600 hover:text-orange-700 transition"
+            >
+              <Instagram className="w-5 h-5" />
+            </motion.a>
+
+            {/* LinkedIn */}
+            <motion.a
+              href="https://www.linkedin.com/company/yes-lorvens-solutions-pvt-ltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="text-orange-600 hover:text-orange-700 transition"
+            >
+              <Linkedin className="w-5 h-5" />
+            </motion.a>
+
+            {/* Facebook */}
+            <motion.a
+              href="https://www.facebook.com/yeslorvens"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="text-orange-600 hover:text-orange-700 transition"
+            >
+              <Facebook className="w-5 h-5" />
+            </motion.a>
+
+            {/* Replace Twitter with X */}
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.2 }}
+              className="text-orange-600 hover:text-orange-700 transition"
+            >
+              <X className="w-5 h-5" />
+            </motion.a>
           </div>
         </div>
 
@@ -79,52 +110,51 @@ const Footer = () => {
         </div>
 
         {/* Services */}
-   <div>
-  <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Services</h3>
-  <ul className="space-y-2 text-sm">
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        Web Development
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        Mobile Apps
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        UI/UX Design
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        Digital Marketing
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        AI/ML Integrations
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        School Website Development
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        E-Commerce Websites Building
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="hover:text-orange-600 transition">
-        Portfolio Building
-      </Link>
-    </li>
-  </ul>
-</div>
-
+        <div>
+          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Services</h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                Web Development
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                Mobile Apps
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                UI/UX Design
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                Digital Marketing
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                AI/ML Integrations
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                School Website Development
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                E-Commerce Websites Building
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-orange-600 transition">
+                Portfolio Building
+              </Link>
+            </li>
+          </ul>
+        </div>
 
         {/* Contact */}
         <div>
@@ -133,7 +163,7 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-orange-600" /> +91 70138 14030
+              <Phone className="w-4 h-4 text-orange-600" /> +91 7013814030
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-orange-600" /> info@yeslorvens.com
@@ -141,7 +171,7 @@ const Footer = () => {
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
               <span>
-                Jubilee Hills Road No 86,Hyderabad, Telangana
+                Jubilee Hills Road No 86, Hyderabad, Telangana
                 <br />
                 India - 500033
               </span>
