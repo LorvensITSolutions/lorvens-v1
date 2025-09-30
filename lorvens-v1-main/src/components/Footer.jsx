@@ -133,11 +133,9 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-orange-600" /> +91 9390575069
+              <Phone className="w-4 h-4 text-orange-600" /> +91 7013814030
             </li>
-            <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-orange-600" /> +91 9542935109
-            </li>
+ 
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-orange-600" /> info@yeslorvens.com
             </li>
