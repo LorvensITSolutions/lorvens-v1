@@ -31,9 +31,9 @@ const Footer = () => {
             Crafting innovative tech solutions tailored to your business goals.
           </p>
           <div className="flex gap-4 mt-2">
-            {/* Social Icons with actual links */}
             <motion.a
               href="https://www.instagram.com/yeslorvenssolutionspvt"
+              aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -42,7 +42,8 @@ const Footer = () => {
               <Instagram className="w-5 h-5" />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/company/satyendra yalla"
+              href="https://www.linkedin.com/company/yes-lorvens-solutions-private-limited"
+              aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -52,6 +53,7 @@ const Footer = () => {
             </motion.a>
             <motion.a
               href="https://www.facebook.com/yeslorvens"
+              aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -61,6 +63,7 @@ const Footer = () => {
             </motion.a>
             <motion.a
               href="https://twitter.com/yeslorvens"
+              aria-label="Twitter"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -107,7 +110,9 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Services</h3>
+          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">
+            Services
+          </h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link to="/services" className="hover:text-orange-600 transition">
@@ -159,10 +164,22 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-orange-600" /> +91 7013814030
+              <Phone className="w-4 h-4 text-orange-600" />
+              <a
+                href="tel:+917013814030"
+                className="hover:text-orange-600 transition"
+              >
+                +91 7013814030
+              </a>
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-orange-600" /> info@yeslorvens.com
+              <Mail className="w-4 h-4 text-orange-600" />
+              <a
+                href="mailto:info@yeslorvens.com"
+                className="hover:text-orange-600 transition"
+              >
+                info@yeslorvens.com
+              </a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
