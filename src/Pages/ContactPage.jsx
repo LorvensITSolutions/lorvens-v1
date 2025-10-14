@@ -206,21 +206,21 @@ const ContactPage = () => {
               <ContactInfoCard
                 icon={Mail}
                 title="Email Us"
-                info={`yeslorvenspvt@gmail.com\nConnect with our team for any inquiries`}
+                info={`yeslorvenssolutions@gmail.com\nConnect with our team for any inquiries`}
                 delay={0.2}
                 gradient="from-green-500 to-green-600"
               />
               <ContactInfoCard
                 icon={Phone}
                 title="Call Us"
-                info={`+91 9542935109\n+91 9390575069\nAvailable Mon-Fri, 9AM-6PM`}
+                info={`+91 7013814030\n+91 9390575069\nAvailable Mon-Fri, 9AM-6PM`}
                 delay={0.3}
                 gradient="from-purple-500 to-purple-600"
               />
               <ContactInfoCard
                 icon={MapPin}
                 title="Visit Us"
-                info="YES LORVENS SOLUTIONS PVT LTD, JUBILEE HILLS ROAD NO 86 Hyderabad, India"
+                info="YES LORVENS SOLUTIONS PVT LTD, Flat No:530, ROAD NO 86, Jubilee Hills, Hyderabad, India, 500096"
                 delay={0.1}
                 gradient="from-blue-500 to-blue-600"
               />
