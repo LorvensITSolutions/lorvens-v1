@@ -213,7 +213,7 @@ const ContactPage = () => {
               <ContactInfoCard
                 icon={Phone}
                 title="Call Us"
-                info={`+91 7013814030\n+91 9390575069\nAvailable Mon-Fri, 9AM-6PM`}
+                info={`+91 7013814030\nAvailable Mon-Fri, 9AM-6PM`}
                 delay={0.3}
                 gradient="from-purple-500 to-purple-600"
               />
