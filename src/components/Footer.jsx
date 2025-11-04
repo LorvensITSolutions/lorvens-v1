@@ -161,7 +161,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Contact Us</h3>
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-orange-600" /> +91 7013814030
+              <Phone className="w-4 h-4 text-orange-600" /> +91 7013814030\n+91 4031985921
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-orange-600" /> info@yeslorvens.com
