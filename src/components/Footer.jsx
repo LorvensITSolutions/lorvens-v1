@@ -21,17 +21,17 @@ const Footer = () => {
       viewport={{ once: true }}
       className="bg-[#FFF6E5] text-[#1F1F1F] pt-12 pb-6 px-4 sm:px-6 md:px-12 border-t border-orange-200"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+
         {/* Brand */}
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold text-[#0B2149] mb-2 tracking-wide">
-            Yes LORVENS
+            YES LORVENS
           </h2>
           <p className="text-sm text-gray-700 mb-4">
             Crafting innovative tech solutions tailored to your business goals.
           </p>
           <div className="flex gap-4 mt-2 flex-wrap">
-            {/* Instagram */}
             <motion.a
               href="https://www.instagram.com/yeslorvenssolutionspvt"
               target="_blank"
@@ -42,7 +42,6 @@ const Footer = () => {
               <Instagram className="w-6 h-6" />
             </motion.a>
 
-            {/* LinkedIn */}
             <motion.a
               href="https://www.linkedin.com/company/yes-lorvens-solutions-pvt-ltd"
               target="_blank"
@@ -53,7 +52,6 @@ const Footer = () => {
               <Linkedin className="w-6 h-6" />
             </motion.a>
 
-            {/* Facebook */}
             <motion.a
               href="https://www.facebook.com/yeslorvens"
               target="_blank"
@@ -64,7 +62,6 @@ const Footer = () => {
               <Facebook className="w-6 h-6" />
             </motion.a>
 
-            {/* Twitter/X */}
             <motion.a
               href="https://twitter.com/yeslorvens"
               target="_blank"
@@ -79,33 +76,15 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Quick Links</h3>
+          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">
+            Quick Links
+          </h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link to="/" className="hover:text-orange-600 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-orange-600 transition">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link to="/projects" className="hover:text-orange-600 transition">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-orange-600 transition">
-                Contact
-              </Link>
-            </li>
+            <li><Link to="/" className="hover:text-orange-600 transition">Home</Link></li>
+            <li><Link to="/about" className="hover:text-orange-600 transition">About Us</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">Services</Link></li>
+            <li><Link to="/projects" className="hover:text-orange-600 transition">Projects</Link></li>
+            <li><Link to="/contact" className="hover:text-orange-600 transition">Contact</Link></li>
           </ul>
         </div>
 
@@ -113,46 +92,14 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Services</h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                Web Development
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                Mobile Apps
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                UI/UX Design
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                Digital Marketing
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                AI/ML Integrations
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                School Website Development
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                E-Commerce Websites Building
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-orange-600 transition">
-                Portfolio Building
-              </Link>
-            </li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">Web Development</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">Mobile Apps</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">UI/UX Design</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">Digital Marketing</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">AI/ML Integrations</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">School Website Development</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">E-Commerce Websites</Link></li>
+            <li><Link to="/services" className="hover:text-orange-600 transition">Portfolio Building</Link></li>
           </ul>
         </div>
 
@@ -161,26 +108,58 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Contact Us</h3>
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-orange-600" /> +91 7013814030 +91 4031985921
+              <Phone className="w-4 h-4 text-orange-600" />
+              +91 7013814030 <br /> &nbsp; +91 4031985921
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-orange-600" /> info@yeslorvens.com
+              <Mail className="w-4 h-4 text-orange-600" />
+              info@yeslorvens.com
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
               <span>
-                Jubilee Hills Road No 86, Hyderabad, Telangana
-                <br />
+                Jubilee Hills Road No 86, Hyderabad, Telangana <br />
                 India - 500033
               </span>
             </li>
           </ul>
         </div>
+
+        {/* SUPPORT FIELD (NEW) */}
+      <div>
+  <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Support</h3>
+  <ul className="space-y-2 text-sm">
+
+    {/* Privacy Policy */}
+    <li>
+      <Link
+        to="/privacy-policy"
+        className="hover:text-orange-600 transition"
+      >
+        Privacy Policy
+      </Link>
+    </li>
+
+    {/* Terms of Use */}
+    <li>
+      <Link
+        to="/terms-of-use"
+        className="hover:text-orange-600 transition"
+      >
+        Terms of Use
+      </Link>
+    </li>
+
+  </ul>
+</div>
+
+
       </div>
+      
 
       {/* Footer Bottom */}
       <div className="mt-10 border-t border-orange-200 pt-4 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} Yes LORVENS. All rights reserved.
+        &copy; {new Date().getFullYear()} YES LORVENS. All rights reserved.
       </div>
     </motion.footer>
   );

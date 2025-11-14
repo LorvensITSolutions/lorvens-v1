@@ -10,6 +10,8 @@ import ServiceDetail from "./Pages/ServiceDetail";
 import ProjectsPage from "./Pages/ProjectPage";
 import AboutPage from "./Pages/AboutPage";
 import Footer from "./components/Footer";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfUse from "./components/TermsOfUse";
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
           <Route path="/service/:serviceId" element={<ServiceDetail />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
           
         </Routes>
       </main>

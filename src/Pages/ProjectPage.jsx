@@ -602,14 +602,15 @@ const ProjectsPage = () => {
               </motion.span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Discover the innovative solutions we've crafted with{" "}
-              <motion.span 
-                className="text-yellow-300 font-bold"
-                whileHover={{ scale: 1.1 }}
-              >
-                Passion & Technology
-              </motion.span>
-            </p>
+  Discover the innovative solutions we've crafted with{" "}
+  <motion.span
+    className="text-yellow-300 font-bold whitespace-nowrap"
+    whileHover={{ scale: 1.1 }}
+  >
+    Passion &amp; Technology
+  </motion.span>
+</p>
+
           </motion.div>
         </motion.div>
 
