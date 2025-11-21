@@ -12,8 +12,7 @@ import AboutPage from "./Pages/AboutPage";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfUse from "./components/TermsOfUse";
-import NotFound from "./components/Notfound";
-
+  
 
 
 function App() {
@@ -36,8 +35,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
-            {/* 404 PAGE MUST BE LAST */}
-          <Route path="*" element={<NotFound />} />
+            
            
         </Routes>
       </main>
