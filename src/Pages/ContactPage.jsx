@@ -10,10 +10,10 @@ import {
   Globe,
   MessageCircle,
 } from "lucide-react";
-import useContactStore from "../stores/useContactStore"; // adjust path if needed
-import "./ProjectPage.css"; // Import the CSS file for custom styles
+import useContactStore from "../stores/useContactStore";
+import "./ProjectPage.css";
 
-// --- ParallaxBackground (same as your previous implementation) ---
+// --- ParallaxBackground ---
 const ParallaxBackground = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 1000], [0, -300]);
@@ -42,7 +42,7 @@ const ParallaxBackground = () => {
   );
 };
 
-// --- ContactInfoCard (defined here so it's not undefined) ---
+// --- ContactInfoCard ---
 const ContactInfoCard = ({ icon: Icon, title, info, delay = 0, gradient }) => {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.3 });
@@ -74,7 +74,7 @@ const ContactInfoCard = ({ icon: Icon, title, info, delay = 0, gradient }) => {
   );
 };
 
-// --- ContactPage (uses zustand store) ---
+// --- ContactPage ---
 const ContactPage = () => {
   const {
     name,
@@ -108,38 +108,50 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-[#FFF6E5] via-orange-50 to-[#FFF6E5] relative overflow-hidden">
       <ParallaxBackground />
 
-      {/* Hero */}
+      {/* HERO (RESTORED FULL ORIGINAL STYLE) */}
       <motion.section
         style={{ y: headerY, opacity: headerOpacity }}
-        className="icon-zap relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-28 overflow-hidden"
+        className="icon-zap relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 
+                   py-16 sm:py-20 lg:py-28 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 text-center relative z-10">
           <div className="inline-block mb-6">
             <MessageCircle size={48} className="text-white mx-auto" />
           </div>
+
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6">
             Join <span className="bg-gradient-to-r from-yellow-300 to-orange-200 bg-clip-text text-transparent">YES LORVENS</span>
           </h1>
+
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white/90 mb-6">
             Build Your Future with Us
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+
+          <p
+            className="
+              text-base sm:text-lg lg:text-xl 
+              text-white/80 mx-auto leading-relaxed
+              whitespace-normal 
+              lg:whitespace-nowrap 
+              lg:max-w-none
+            "
+          >
             At <span className="font-bold text-yellow-300">YES LORVENS</span>, we foster a culture centered on innovation, collaboration, and excellence.
           </p>
         </div>
       </motion.section>
 
-      {/* Contact Section */}
+      {/* CONTACT SECTION (REDUCED GAPS) */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative bg-gradient-to-r from-gray-50 to-orange-50 py-16 sm:py-20 lg:py-24"
+        className="relative bg-gradient-to-r from-gray-50 to-orange-50 py-10 sm:py-14 lg:py-16"
       >
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-10">
           <Globe size={40} className="text-orange-500 mx-auto" />
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-3">
             Get In <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
@@ -148,11 +160,12 @@ const ContactPage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 lg:gap-12">
-            {/* Form */}
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
+
+            {/* FORM */}
             <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="xl:col-span-2">
-              <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-6 sm:p-8 lg:p-10 border border-orange-100 relative overflow-hidden">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-6 sm:p-7 lg:p-8 border border-orange-100 relative overflow-hidden">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <input
                     type="text"
                     value={name}
@@ -182,27 +195,34 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:outline-none resize-none"
                   />
 
-                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} type="submit" disabled={loading} className="w-full bg-orange-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center justify-center group disabled:opacity-50">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-orange-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center justify-center group disabled:opacity-50"
+                  >
                     {loading ? "Sending..." : (<><Send size={18} className="mr-2" />Send Message</>)}
                   </motion.button>
                 </form>
 
                 {success && (
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-4 p-4 bg-green-100 text-green-700 rounded-xl flex items-center">
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-3 p-4 bg-green-100 text-green-700 rounded-xl flex items-center">
                     <CheckCircle size={20} className="mr-2 text-green-600" />
                     Message sent successfully!
                   </motion.div>
                 )}
+
                 {error && (
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-4 p-4 bg-red-100 text-red-700 rounded-xl">
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-3 p-4 bg-red-100 text-red-700 rounded-xl">
                     {error}
                   </motion.div>
                 )}
               </div>
             </motion.div>
 
-            {/* Contact Info Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-6">
+            {/* CONTACT CARDS */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-5">
               <ContactInfoCard
                 icon={Mail}
                 title="Email Us"
