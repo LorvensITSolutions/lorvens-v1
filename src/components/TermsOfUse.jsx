@@ -26,9 +26,7 @@ export default function TermsOfUse() {
             Yes Lorvens Solutions Pvt. Ltd. Terms of Use
           </h2>
 
-          <p className="text-gray-700 mb-4">
-            <strong>Effective Date:</strong> 13/11/2025
-          </p>
+          
 
           <p className="text-gray-700 mb-4">
             <strong>Website:</strong> https://www.yeslorvens.com
