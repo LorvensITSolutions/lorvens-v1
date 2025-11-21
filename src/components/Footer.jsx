@@ -90,18 +90,61 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Services</h3>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/services" className="hover:text-orange-600 transition">Web Development</Link></li>
-            <li><Link to="/services" className="hover:text-orange-600 transition">Mobile Apps</Link></li>
-            <li><Link to="/services" className="hover:text-orange-600 transition">UI/UX Design</Link></li>
-            <li><Link to="/services" className="hover:text-orange-600 transition">Digital Marketing</Link></li>
-            <li><Link to="/services" className="hover:text-orange-600 transition">AI/ML Integrations</Link></li>
-            <li><Link to="/services" className="hover:text-orange-600 transition">School Website Development</Link></li>
-            <li><Link to="/services" className="hover:text-orange-600 transition">E-Commerce Websites</Link></li>
-            <li><Link to="/services" className="hover:text-orange-600 transition">Portfolio Building</Link></li>
-          </ul>
-        </div>
+  <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Services</h3>
+  <ul className="space-y-2 text-sm">
+
+    <li>
+      <Link to="/service/web-development" className="hover:text-orange-600 transition">
+        Web Development
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/mobile-development" className="hover:text-orange-600 transition">
+        Mobile Apps
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/ui-ux-design" className="hover:text-orange-600 transition">
+        UI/UX Design
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/digital-marketing" className="hover:text-orange-600 transition">
+        Digital Marketing
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/ai-ml-integration" className="hover:text-orange-600 transition">
+        AI/ML Integrations
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/school-website" className="hover:text-orange-600 transition">
+        School Website Development
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/ecommerce-website" className="hover:text-orange-600 transition">
+        E-Commerce Websites
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/portfolio-building" className="hover:text-orange-600 transition">
+        Portfolio Building
+      </Link>
+    </li>
+
+  </ul>
+</div>
+
+
 
         {/* Contact */}
         <div>

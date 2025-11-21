@@ -149,7 +149,7 @@ association, sponsorship, or affiliation by Yes Lorvens unless explicitly stated
                         {/* section 6 */}
 
           {/* ------------ Disclaimer ------------ */}
-          <h3 className="text-xl font-semibold text-gray-800 mt-10 mb-3">6.Disclaimer</h3>
+          <h3 className="text-xl font-semibold text-gray-800 mt-10 mb-3">6. Disclaimer</h3>
 
           <p className="text-gray-700 mb-6">
            The information and materials on this website are provided for general informational purposes only. 
