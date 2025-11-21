@@ -219,7 +219,7 @@ We value your trust and are committed to keeping your personal data safe and sec
        {/* Contact Email */}
 <p className="text-gray-700 font-semibold flex items-center gap-2">
   <Mail className="w-5 h-5 text-[#B44A00]" />
-  lorvensitsolutionspvtltd@yeslorvens.com
+  yeslorvenssolutions@gmail.com
 </p>
 
 {/* Website Link */}
