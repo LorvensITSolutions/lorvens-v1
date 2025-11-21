@@ -175,13 +175,21 @@ const Footer = () => {
       </a>
     </li>
 
-    <li className="flex items-start gap-2">
-      <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
-      <span>
-        Jubilee Hills Road No 86, Hyderabad, Telangana <br />
-        India - 500033
-      </span>
-    </li>
+   <li className="flex items-start gap-2">
+  <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
+  <span>
+    <a 
+      href="https://www.google.com/maps?q=Jubilee+Hills+Road+No+86,+Hyderabad,+Telangana+500033" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="hover:text-orange-600 transition"
+    >
+      Jubilee Hills Road No 86, Hyderabad, Telangana <br />
+      India - 500033
+    </a>
+  </span>
+</li>
+
 
   </ul>
 </div>
