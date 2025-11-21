@@ -77,7 +77,7 @@ const Footer = () => {
         {/* Quick Links */}
         <div>
           <h3 className="text-lg font-semibold text-[#0B2149] mb-3">
-            Quick Links
+            Explore
           </h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-orange-600 transition">Home</Link></li>
@@ -90,7 +90,7 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-  <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Services</h3>
+  <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Our Services</h3>
   <ul className="space-y-2 text-sm">
 
     <li>
@@ -147,30 +147,49 @@ const Footer = () => {
 
 
         {/* Contact */}
-        <div>
-          <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Contact Us</h3>
-          <ul className="space-y-2 text-sm text-gray-700">
-            <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-orange-600" />
-              +91 7013814030 <br /> &nbsp; +91 4031985921
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-orange-600" />
-              info@yeslorvens.com
-            </li>
-            <li className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
-              <span>
-                Jubilee Hills Road No 86, Hyderabad, Telangana <br />
-                India - 500033
-              </span>
-            </li>
-          </ul>
-        </div>
+      <div>
+  <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Contact</h3>
+  <ul className="space-y-2 text-sm text-gray-700">
+
+    <li className="flex items-center gap-2">
+  <Phone className="w-4 h-4 text-orange-600" />
+  <span>
+    <a href="tel:+917013814030" className="hover:text-orange-600 transition">
+      +91 7013814030
+    </a>
+    <br />
+    <a href="tel:+914031985921" className="hover:text-orange-600 transition">
+      +91 4031985921
+    </a>
+  </span>
+</li>
+
+
+    <li className="flex items-center gap-2">
+      <Mail className="w-4 h-4 text-orange-600" />
+      <a 
+        href="mailto:info@yeslorvens.com" 
+        className="hover:text-orange-600 transition"
+      >
+        info@yeslorvens.com
+      </a>
+    </li>
+
+    <li className="flex items-start gap-2">
+      <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
+      <span>
+        Jubilee Hills Road No 86, Hyderabad, Telangana <br />
+        India - 500033
+      </span>
+    </li>
+
+  </ul>
+</div>
+
 
         {/* SUPPORT FIELD (NEW) */}
       <div>
-  <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Support</h3>
+  <h3 className="text-lg font-semibold text-[#0B2149] mb-3"> Legal </h3>
   <ul className="space-y-2 text-sm">
 
     {/* Privacy Policy */}
