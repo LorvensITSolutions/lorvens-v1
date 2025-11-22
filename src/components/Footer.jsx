@@ -165,15 +165,24 @@ const Footer = () => {
 </li>
 
 
-    <li className="flex items-center gap-2">
-      <Mail className="w-4 h-4 text-orange-600" />
-      <a 
-        href="mailto:info@yeslorvens.com" 
-        className="hover:text-orange-600 transition"
-      >
-        info@yeslorvens.com
-      </a>
-    </li>
+  <li className="flex items-center gap-2">
+  <Mail className="w-4 h-4 text-orange-600" />
+
+  <a
+    href={
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      "&to=info@yeslorvens.com" +
+      "&su=Enquiry%20From%20YES%20Lorvens%20Website" +
+      "&body=Hello%20Team%20Lorvens,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20services.%0D%0A%0D%0AThank%20you!"
+    }
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-orange-600 transition"
+  >
+    info@yeslorvens.com
+  </a>
+</li>
+
 
    <li className="flex items-start gap-2">
   <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
