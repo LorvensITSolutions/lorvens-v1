@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { useNetworkStatus } from "./hooks/useNetworkStatus";
 
 import HomePage from "./Pages/HomePage";
 import ContactPage from "./Pages/ContactPage";
@@ -12,10 +13,17 @@ import AboutPage from "./Pages/AboutPage";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfUse from "./components/TermsOfUse";
-  
-
+import NetworkError from "./Pages/NetworkError";
 
 function App() {
+  const isOnline = useNetworkStatus();
+
+  // Show NetworkError page when offline
+  if (!isOnline) {
+    return <NetworkError />;
+  }
+
+  // Show normal app when online
   return (
     <div className="min-h-screen text-[#1F1F1F] relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -35,8 +43,9 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
-            
-           
+
+          {/* 404 Page - Only shown when online but route not found */}
+          <Route path="*" element={<NetworkError />} />
         </Routes>
       </main>
 
