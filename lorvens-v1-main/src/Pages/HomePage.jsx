@@ -137,45 +137,46 @@ const cards = [
     id: 1,
     icon: <Users className="w-6 h-6 text-orange-600" />,
     title: "Experienced Team",
-    desc: "Our design experts craft exceptional digital products with their extensive knowledge.",
+    desc: "Our expert team designs and builds high-quality digital products with deep industry experience.",
     gradient: "from-orange-50 to-red-50",
   },
   {
     id: 2,
     icon: <Cog className="w-6 h-6 text-orange-600" />,
     title: "User-Centric Design",
-    desc: "Products that truly match user needs and preferences.",
+    desc: "We create products that align perfectly with your users’ needs, behavior, and expectations.",
     gradient: "from-orange-50 to-yellow-50",
   },
   {
     id: 3,
     icon: <Monitor className="w-6 h-6 text-orange-600" />,
-    title: "Seamless User Experience",
-    desc: "Interfaces designed for user delight and engagement.",
+    title: "Smooth Experience",
+    desc: "Every interface is crafted to feel smooth, intuitive, and delightful to use.",
     gradient: "from-orange-50 to-amber-50",
   },
   {
     id: 4,
     icon: <TrendingUp className="w-6 h-6 text-orange-600" />,
     title: "Results Driven",
-    desc: "We focus on growth and results that you can clearly see and track.",
+    desc: "We focus on measurable outcomes, growth, and clear ROI for your business.",
     gradient: "from-orange-50 to-pink-50",
   },
   {
     id: 5,
     icon: <Lightbulb className="w-6 h-6 text-orange-600" />,
     title: "Innovative Solutions",
-    desc: "We use the latest technology, fresh ideas, and powerful execution.",
+    desc: "We combine modern technology with fresh ideas and strong execution.",
     gradient: "from-orange-50 to-purple-50",
   },
   {
     id: 6,
     icon: <MessageSquare className="w-6 h-6 text-orange-600" />,
     title: "24/7 Support",
-    desc: "Our team is available anytime to help and answer your questions.",
+    desc: "Our support team is available around the clock to help you whenever you need.",
     gradient: "from-orange-50 to-blue-50",
   },
 ];
+
 const HomePage = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
@@ -228,190 +229,80 @@ const HomePage = () => {
 
       {/* ✨ Enhanced Partner / Why Choose Us Section */}
       <section className="py-20 px-6 md:px-12 lg:px-20 relative">
-        {/* Section Background Glow */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-orange-100/30 to-yellow-100/30 rounded-3xl blur-3xl"
-          variants={glowVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        />
 
-        <motion.div
-          className="relative z-10"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {/* Enhanced Header */}
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-800 font-medium mb-4"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Sparkles size={16} />
-              <span>Why Choose Us</span>
-            </motion.div>
+  {/* Soft Background Glow */}
+  <motion.div
+    className="absolute inset-0 bg-gradient-to-r from-orange-100/20 to-yellow-100/20 rounded-3xl blur-2xl"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    viewport={{ once: true }}
+  />
 
-            <motion.h2
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-[#0B2149] via-orange-600 to-[#0B2149] bg-clip-text text-transparent"
-              variants={fadeInUp}
-            >
-              Your Success, Our Mission
-            </motion.h2>
+  {/* Section Header */}
+  <motion.div
+    className="relative z-10 text-center mb-16"
+    initial={{ opacity: 0, y: 15 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.35 }}
+    viewport={{ once: true }}
+  >
+    <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-800 font-medium mb-4">
+      <Sparkles size={16} />
+      <span>Why Choose Us</span>
+    </div>
 
-            <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-              variants={fadeInUp}
-            >
-              Choosing the right partner can make or break your digital journey.
-              Here's why industry leaders trust us with their most ambitious
-              projects.
-            </motion.p>
-          </motion.div>
+    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-[#0B2149] via-orange-600 to-[#0B2149] bg-clip-text text-transparent">
+      Your Success, Our Mission
+    </h2>
 
-          {/* Enhanced Grid Cards */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={staggerContainer}
-          >
-            {cards.map((card, index) => (
-              <motion.div
-                key={card.id}
-                className={`group relative p-8 rounded-3xl bg-gradient-to-br ${card.gradient} 
-                           border border-orange-200/50 backdrop-blur-sm
-                           hover:border-orange-400/70 transition-all duration-500 
-                           flex flex-col justify-between h-full min-h-[280px]
-                           shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden`}
-                variants={cardVariants}
-                whileHover="hover"
-                custom={index}
-              >
-                {/* Card Background Glow */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  initial={false}
-                />
+    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      Choosing the right partner can make or break your digital journey.
+      Here's why industry leaders trust us with their most ambitious projects.
+    </p>
+  </motion.div>
 
-                {/* Animated Border */}
-                <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  style={{
-                    backgroundSize: "200% 200%",
-                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    maskComposite: "xor",
-                  }}
-                />
+  {/* Cards */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+    {cards.map((card) => (
+      <motion.div
+        key={card.id}
+        className={`p-8 rounded-3xl bg-gradient-to-br ${card.gradient}
+        border border-orange-200/50 backdrop-blur-sm shadow-lg
+        flex flex-col justify-between min-h-[280px]
+        cursor-pointer transition-all duration-300`}
 
-                <div className="relative z-10">
-                  {/* Enhanced Icon Container */}
-                  <motion.div
-                    className="relative w-16 h-16 flex items-center justify-center rounded-2xl 
-                               bg-gradient-to-br from-white to-orange-50 
-                               border-2 border-orange-300/50 mb-6 shadow-lg group-hover:shadow-xl"
-                    variants={iconVariants}
-                    whileHover="hover"
-                  >
-                    {/* Icon Glow Effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-orange-400/20 rounded-2xl blur-md"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileHover={{ opacity: 1, scale: 1.2 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    <div className="relative z-10">{card.icon}</div>
-                  </motion.div>
+        // LIGHT Fade-in (fast)
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.35 }}
 
-                  {/* Enhanced Title */}
-                  <motion.h3
-                    className="text-2xl font-bold text-[#0B2149] mb-3 group-hover:text-orange-700 transition-colors duration-300"
-                    initial={{ x: -20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                  >
-                    {card.title}
-                  </motion.h3>
+        // LIGHT Hover Expand
+        whileHover={{ scale: 1.03 }}
+      >
+        {/* Icon */}
+        <div className="relative w-16 h-16 mb-6 flex items-center justify-center 
+          rounded-2xl bg-gradient-to-br from-white to-orange-50 
+          border-2 border-orange-300/50 shadow-md">
+          {card.icon}
+        </div>
 
-                  {/* Animated Divider */}
-                  <motion.div
-                    className="flex items-center gap-2 mb-4"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "auto" }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                  >
-                    <motion.div
-                      className="h-1 w-12 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ delay: 0.5, duration: 0.5 }}
-                    />
-                    <motion.div
-                      className="h-1 w-4 bg-gradient-to-r from-yellow-500 to-orange-400 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ delay: 0.7, duration: 0.5 }}
-                    />
-                    <motion.div
-                      className="h-1 w-2 bg-orange-300 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ delay: 0.9, duration: 0.5 }}
-                    />
-                  </motion.div>
+        {/* Title */}
+        <h3 className="text-2xl font-bold text-[#0B2149] mb-3">
+          {card.title}
+        </h3>
 
-                  {/* Enhanced Description */}
-                  <motion.p
-                    className="text-gray-700 text-base leading-relaxed flex-grow group-hover:text-gray-800 transition-colors duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                  >
-                    {card.desc}
-                  </motion.p>
-                </div>
+        {/* Description */}
+        <p className="text-gray-700 text-base leading-relaxed">
+          {card.desc}
+        </p>
+      </motion.div>
+    ))}
+  </div>
 
-                {/* Hover Arrow Effect */}
-                <motion.div
-                  className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileHover={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white shadow-lg">
-                    <ArrowRight size={16} />
-                  </div>
-                </motion.div>
+</section>
 
-                {/* Particle Effect */}
-                <motion.div
-                  className="absolute top-4 right-4 text-orange-300/50"
-                  animate={{
-                    rotate: [0, 360],
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  <Sparkles size={16} />
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </section>
 
       {/* ✨ Enhanced Final CTA Section */}
       <section className="py-24 px-6 md:px-12 lg:px-20 text-center relative overflow-hidden">

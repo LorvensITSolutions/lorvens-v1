@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Users,
   Cog,
@@ -10,25 +10,23 @@ import {
   MessageSquare,
   ArrowRight,
   Sparkles,
-  Zap,
 } from "lucide-react";
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import InnovationSection from "../components/InnovationSection";
 
-// ✨ Enhanced Animation Variants
+// ⚡ Balanced Animation Variants - Fast & Smooth
 const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: (i = 1) => ({
+  hidden: { opacity: 0, y: 30 },
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.15,
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      duration: 0.4,
+      ease: "easeOut",
     },
-  }),
+  },
 };
 
 const staggerContainer = {
@@ -36,8 +34,7 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -45,93 +42,32 @@ const staggerContainer = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 50,
-    scale: 0.9,
-    rotateX: 45,
+    y: 30,
+    scale: 0.95,
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    rotateX: 0,
     transition: {
-      duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-  hover: {
-    scale: 1.08,
-    y: -8,
-    rotateY: 5,
-    boxShadow: "0px 20px 40px rgba(255, 165, 0, 0.25)",
-    transition: {
-      duration: 0.3,
+      duration: 0.4,
       ease: "easeOut",
     },
   },
 };
 
-const iconVariants = {
-  hidden: { scale: 0, rotate: -180 },
-  visible: {
-    scale: 1,
-    rotate: 0,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 15,
-      delay: 0.2,
-    },
-  },
+const iconBounce = {
   hover: {
-    scale: 1.2,
-    rotate: 10,
-    transition: { duration: 0.2 },
-  },
-};
-
-const glowVariants = {
-  hidden: { opacity: 0, scale: 0 },
-  visible: {
-    opacity: [0, 0.5, 0],
-    scale: [0, 1.5, 2],
+    scale: 1.15,
+    rotate: [0, -10, 10, 0],
     transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "loop",
+      duration: 0.4,
       ease: "easeInOut",
     },
   },
 };
 
-const floatingVariants = {
-  animate: {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut",
-    },
-  },
-};
-
-const pulseVariants = {
-  animate: {
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut",
-    },
-  },
-};
-
-// Enhanced Partner cards with better descriptions
+// Enhanced Partner cards
 const cards = [
   {
     id: 1,
@@ -144,14 +80,14 @@ const cards = [
     id: 2,
     icon: <Cog className="w-6 h-6 text-orange-600" />,
     title: "User-Centric Design",
-    desc: " Products that truly match user needs and preferences.",
+    desc: "Products that truly match user needs and preferences.",
     gradient: "from-orange-50 to-yellow-50",
   },
   {
     id: 3,
     icon: <Monitor className="w-6 h-6 text-orange-600" />,
-    title: "Seamless User Experience",
-    desc: " Interfaces designed for user delight and engagement",
+    title: "Smooth Experience",
+    desc: "Interfaces designed for user delight and engagement",
     gradient: "from-orange-50 to-amber-50",
   },
   {
@@ -176,46 +112,58 @@ const cards = [
     gradient: "from-orange-50 to-blue-50",
   },
 ];
-const HomePage = () => {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
+const HomePage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFF6E5] via-[#FFF8EB] to-[#FFEFDB] text-[#1F1F1F] relative overflow-hidden">
-      {/* Animated Background Elements */}
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF6E5] via-[#FFF8EB] to-[#FFEFDB] text-[#1F1F1F] overflow-hidden">
+      {/* Subtle Animated Background Elements */}
       <motion.div
         className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-orange-200/20 to-yellow-200/20 rounded-full blur-3xl"
-        variants={floatingVariants}
-        animate="animate"
-        style={{ y, opacity }}
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       />
       <motion.div
         className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-pink-200/20 to-orange-200/20 rounded-full blur-3xl"
-        variants={floatingVariants}
-        animate="animate"
-        style={{
-          y: useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]),
-          opacity: useTransform(scrollYProgress, [0.5, 1], [1, 0]),
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
         }}
       />
 
-      {/* Floating Sparkles */}
-      <motion.div
-        className="absolute top-1/4 left-1/4 text-orange-400"
-        variants={pulseVariants}
-        animate="animate"
-      >
-        <Sparkles size={24} />
-      </motion.div>
-      <motion.div
-        className="absolute top-3/4 right-1/4 text-yellow-500"
-        variants={pulseVariants}
-        animate="animate"
-        style={{ animationDelay: "1s" }}
-      >
-        <Zap size={20} />
-      </motion.div>
+      {/* Floating Particles */}
+      {[...Array(8)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 bg-orange-400/30 rounded-full"
+          style={{
+            left: `${10 + i * 12}%`,
+            top: `${20 + (i % 3) * 25}%`,
+          }}
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: 3 + i * 0.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.3,
+          }}
+        />
+      ))}
 
       {/* Navbar */}
       <Navbar />
@@ -223,48 +171,47 @@ const HomePage = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* ✨ Innovation Section */}
+      {/* Innovation Section */}
       <InnovationSection />
 
-      {/* ✨ Enhanced Partner / Why Choose Us Section */}
+      {/* ⚡ Enhanced Why Choose Us Section */}
       <section className="py-20 px-6 md:px-12 lg:px-20 relative">
-        {/* Section Background Glow */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-orange-100/30 to-yellow-100/30 rounded-3xl blur-3xl"
-          variants={glowVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        />
-
-        <motion.div
-          className="relative z-10"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          {/* Enhanced Header */}
+          {/* Header */}
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-800 font-medium mb-4"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 4px 12px rgba(255, 165, 0, 0.2)" }}
+              transition={{ duration: 0.2 }}
             >
-              <Sparkles size={16} />
+              <motion.div
+                animate={{ rotate: [0, 15, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <Sparkles size={16} />
+              </motion.div>
               <span>Why Choose Us</span>
             </motion.div>
 
             <motion.h2
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-[#0B2149] via-orange-600 to-[#0B2149] bg-clip-text text-transparent"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              Your Succes, Our Mission
+              Your Success, Our Mission
             </motion.h2>
 
             <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-              variants={fadeInUp}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               Choosing the right partner can make or break your digital journey.
               Here's why industry leaders trust us with their most ambitious
@@ -272,7 +219,7 @@ const HomePage = () => {
             </motion.p>
           </motion.div>
 
-          {/* Enhanced Grid Cards */}
+          {/* Grid Cards - Enhanced Effects */}
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
@@ -282,130 +229,92 @@ const HomePage = () => {
                 key={card.id}
                 className={`group relative p-8 rounded-3xl bg-gradient-to-br ${card.gradient} 
                            border border-orange-200/50 backdrop-blur-sm
-                           hover:border-orange-400/70 transition-all duration-500 
+                           hover:border-orange-400/70 transition-all duration-300 
                            flex flex-col justify-between h-full min-h-[280px]
                            shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden`}
                 variants={cardVariants}
-                whileHover="hover"
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  transition: { duration: 0.3 },
+                }}
                 custom={index}
               >
-                {/* Card Background Glow */}
+                {/* Hover Glow Effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-br from-orange-400/0 to-orange-400/0 group-hover:from-orange-400/10 group-hover:to-transparent transition-all duration-300"
                   initial={false}
                 />
 
-                {/* Animated Border */}
+                {/* Animated Top Border */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  style={{
-                    backgroundSize: "200% 200%",
-                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    maskComposite: "xor",
-                  }}
+                  className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
                 />
 
                 <div className="relative z-10">
-                  {/* Enhanced Icon Container */}
+                  {/* Icon Container with Hover Effect */}
                   <motion.div
-                    className="relative w-16 h-16 flex items-center justify-center rounded-2xl 
+                    className="w-16 h-16 flex items-center justify-center rounded-2xl 
                                bg-gradient-to-br from-white to-orange-50 
-                               border-2 border-orange-300/50 mb-6 shadow-lg group-hover:shadow-xl"
-                    variants={iconVariants}
+                               border-2 border-orange-300/50 mb-6 shadow-lg group-hover:shadow-xl
+                               transition-shadow duration-300"
+                    variants={iconBounce}
                     whileHover="hover"
                   >
-                    {/* Icon Glow Effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-orange-400/20 rounded-2xl blur-md"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileHover={{ opacity: 1, scale: 1.2 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    <div className="relative z-10">{card.icon}</div>
+                    {card.icon}
                   </motion.div>
 
-                  {/* Enhanced Title */}
+                  {/* Title with Hover Effect */}
                   <motion.h3
                     className="text-2xl font-bold text-[#0B2149] mb-3 group-hover:text-orange-700 transition-colors duration-300"
-                    initial={{ x: -20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {card.title}
                   </motion.h3>
 
                   {/* Animated Divider */}
-                  <motion.div
-                    className="flex items-center gap-2 mb-4"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "auto" }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                  >
+                  <div className="flex items-center gap-2 mb-4">
                     <motion.div
-                      className="h-1 w-12 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ delay: 0.5, duration: 0.5 }}
+                      className="h-1 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: 48 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
                     />
                     <motion.div
-                      className="h-1 w-4 bg-gradient-to-r from-yellow-500 to-orange-400 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ delay: 0.7, duration: 0.5 }}
+                      className="h-1 bg-gradient-to-r from-yellow-500 to-orange-400 rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: 16 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
                     />
                     <motion.div
                       className="h-1 w-2 bg-orange-300 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ delay: 0.9, duration: 0.5 }}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.3 }}
                     />
-                  </motion.div>
+                  </div>
 
-                  {/* Enhanced Description */}
-                  <motion.p
-                    className="text-gray-700 text-base leading-relaxed flex-grow group-hover:text-gray-800 transition-colors duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                  >
+                  {/* Description */}
+                  <p className="text-gray-700 text-base leading-relaxed flex-grow group-hover:text-gray-800 transition-colors duration-300">
                     {card.desc}
-                  </motion.p>
+                  </p>
                 </div>
 
-                {/* Hover Arrow Effect */}
+                {/* Sparkle Effect on Hover */}
                 <motion.div
-                  className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileHover={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white shadow-lg">
-                    <ArrowRight size={16} />
-                  </div>
-                </motion.div>
-
-                {/* Particle Effect */}
-                <motion.div
-                  className="absolute top-4 right-4 text-orange-300/50"
+                  className="absolute top-4 right-4 text-orange-400/0 group-hover:text-orange-400/70 transition-all duration-300"
                   animate={{
                     rotate: [0, 360],
-                    scale: [1, 1.2, 1],
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 8,
                     repeat: Infinity,
                     ease: "linear",
                   }}
                 >
-                  <Sparkles size={16} />
+                  <Sparkles size={18} />
                 </motion.div>
               </motion.div>
             ))}
@@ -413,98 +322,72 @@ const HomePage = () => {
         </motion.div>
       </section>
 
-      {/* ✨ Enhanced Final CTA Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 text-center relative overflow-hidden">
-        {/* Animated Background */}
+      {/* ⚡ Enhanced Final CTA Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-20 text-center relative">
+        {/* Floating Decorative Elements */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-yellow-500/5 to-orange-500/5"
-          animate={{
-            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            backgroundSize: "200% 200%",
-          }}
-        />
-
-        {/* Floating Elements */}
-        <motion.div
-          className="absolute top-10 left-1/4 w-2 h-2 bg-orange-400 rounded-full"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 1, 0.3],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 0,
-          }}
-        />
-        <motion.div
-          className="absolute top-20 right-1/3 w-3 h-3 bg-yellow-400 rounded-full"
+          className="absolute top-20 left-1/4 w-3 h-3 bg-orange-400 rounded-full opacity-40"
           animate={{
             y: [0, -30, 0],
-            opacity: [0.4, 1, 0.4],
+            opacity: [0.2, 0.6, 0.2],
           }}
           transition={{
             duration: 4,
+            repeat: Infinity,
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-1/3 w-2 h-2 bg-yellow-400 rounded-full opacity-40"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.7, 0.3],
+          }}
+          transition={{
+            duration: 3,
             repeat: Infinity,
             delay: 1,
           }}
         />
 
         <motion.div
-          className="relative z-10"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Enhanced CTA Header */}
-          <motion.div className="mb-8" variants={fadeInUp}>
-            <motion.div
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-100 to-yellow-100 rounded-full text-orange-800 font-semibold mb-6 shadow-lg"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 10px 30px rgba(255, 165, 0, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              >
-                <Sparkles size={18} />
-              </motion.div>
-              <span>Ready to Transform?</span>
-            </motion.div>
+          {/* CTA Header */}
+          <motion.div className="mb-4 mt-0" variants={fadeInUp}>
+  <motion.div
+    className="inline-flex items-center gap-2 px-6 py-2.5 
+               bg-gradient-to-r from-orange-100 to-yellow-100 
+               rounded-full text-orange-800 font-semibold 
+               mb-4 shadow-md"
+    whileHover={{ scale: 1.05, y: -2 }}
+    transition={{ duration: 0.15, ease: "easeOut" }}
+  >
+    <motion.div
+      animate={{ rotate: [0, 360] }}
+      transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+    >
+      <Sparkles size={18} />
+    </motion.div>
+
+    <span className="tracking-wide">Ready to Transform?</span>
+  </motion.div>
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 
-                       bg-gradient-to-r from-[#0B2149] via-orange-600 via-yellow-500 to-[#0B2149] 
-                       bg-clip-text text-transparent leading-tight"
+            className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight"
             variants={fadeInUp}
-            custom={1}
           >
-            Build Something
+            <span className="bg-gradient-to-r from-[#0B2149] via-orange-600 to-[#0B2149] bg-clip-text text-transparent">
+              Build Something
+            </span>
             <motion.span
               className="block bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              style={{
-                backgroundSize: "200% 200%",
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               Extraordinary
             </motion.span>
@@ -513,7 +396,6 @@ const HomePage = () => {
           <motion.p
             className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed"
             variants={fadeInUp}
-            custom={2}
           >
             Transform your vision into reality with our cutting-edge digital
             solutions. Whether you're a startup dreaming big or an enterprise
@@ -524,41 +406,40 @@ const HomePage = () => {
             </span>
           </motion.p>
 
-          {/* Enhanced CTA Buttons */}
+          {/* CTA Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             variants={fadeInUp}
-            custom={3}
           >
             {/* Primary CTA */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.08, y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
+            >
               <Link
                 to="/contact"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 
-               bg-gradient-to-r from-orange-600 to-yellow-500 text-white 
-               font-bold text-lg rounded-2xl shadow-xl 
-               hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                 bg-gradient-to-r from-orange-600 to-yellow-500 text-white 
+                 font-bold text-lg rounded-2xl shadow-xl 
+                 hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
-                {/* Button Glow Effect */}
+                {/* Shimmer Effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-400 
-                 opacity-0 group-hover:opacity-20 pointer-events-none"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                   animate={{
-                    x: ["-100%", "100%"],
+                    x: ["-100%", "200%"],
                   }}
                   transition={{
-                    duration: 1.5,
+                    duration: 2,
                     repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "linear",
+                    repeatDelay: 1,
                   }}
                 />
-
                 <span className="relative z-10">Start Your Project</span>
-
                 <motion.div
                   className="relative z-10"
-                  animate={{ x: [0, 5, 0] }}
+                  animate={{ x: [0, 4, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
                   <ArrowRight size={20} />
@@ -567,13 +448,17 @@ const HomePage = () => {
             </motion.div>
 
             {/* Secondary CTA */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
+            >
               <Link
                 to="/projects"
                 className="inline-flex items-center gap-3 px-8 py-4 
-               bg-white/80 backdrop-blur-sm text-orange-600 
-               font-semibold text-lg rounded-2xl border-2 border-orange-200
-               hover:border-orange-400 hover:bg-white transition-all duration-300 shadow-lg"
+                 bg-white/80 backdrop-blur-sm text-orange-600 
+                 font-semibold text-lg rounded-2xl border-2 border-orange-200
+                 hover:border-orange-400 hover:bg-white transition-all duration-300 shadow-lg"
               >
                 <span>View Our Work</span>
                 <Monitor size={18} />
@@ -581,53 +466,41 @@ const HomePage = () => {
             </motion.div>
           </motion.div>
 
-          {/* Trust Indicators */}
+          {/* Trust Indicators with Animation */}
           <motion.div
             className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-500"
             variants={fadeInUp}
-            custom={4}
           >
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.1, color: "#ea580c" }}
-            >
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="font-medium"> Expireance Team</span>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.1, color: "#ea580c" }}
-            >
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-              <span className="font-medium"> 100% Satisfaction Guarantee</span>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.1, color: "#ea580c" }}
-            >
-              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-              <span className="font-medium">24/7 Support</span>
-            </motion.div>
+            {[
+              { color: "bg-green-500", text: "Experienced Team" },
+              { color: "bg-blue-500", text: "100% Satisfaction Guarantee" },
+              { color: "bg-purple-500", text: "24/7 Support" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="flex items-center gap-2"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <motion.div
+                  className={`w-2 h-2 ${item.color} rounded-full`}
+                  animate={{
+                    scale: [1, 1.3, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: i * 0.3,
+                  }}
+                />
+                <span className="font-medium">{item.text}</span>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </section>
-
-      {/* Scroll to Top Indicator */}
-      {/* <motion.div
-        className="fixed bottom-8 right-8 z-50"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 2 }}
-      >
-        <motion.button
-          className="w-12 h-12 bg-orange-500 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-orange-600 transition-colors"
-          whileHover={{ scale: 1.1, y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <ArrowRight className="rotate-[-90deg]" size={20} />
-        </motion.button>
-      </motion.div> */}
     </div>
   );
 };

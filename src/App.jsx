@@ -13,19 +13,22 @@ import AboutPage from "./Pages/AboutPage";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfUse from "./components/TermsOfUse";
+
 import NetworkError from "./Pages/NetworkError";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   const isOnline = useNetworkStatus();
 
-  // Show NetworkError page when offline
+  // ✔ Show network error page when offline
   if (!isOnline) {
     return <NetworkError />;
   }
 
-  // Show normal app when online
+  // ✔ When online → whole website loads normally
   return (
     <div className="min-h-screen text-[#1F1F1F] relative overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.3)_0%,rgba(10,80,60,0.2)_45%,rgba(0,0,0,0.1)_100%)]" />
       </div>
@@ -44,8 +47,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
 
-          {/* 404 Page - Only shown when online but route not found */}
-          <Route path="*" element={<NetworkError />} />
+          {/* ⭐ If route does NOT exist → Show NotFound */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 
