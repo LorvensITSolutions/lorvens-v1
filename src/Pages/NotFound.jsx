@@ -42,7 +42,7 @@ export default function NotFound() {
 
           {/* Single Button Only */}
           <div className="error__nav e-nav">
-            <a href="/" className="e-nav__link">Home Page</a>
+            <a href="/" className="e-nav__link">Home </a>
           </div>
 
         </div>
