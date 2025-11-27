@@ -1,6 +1,11 @@
  
 @charset "UTF-8";
- 
+
+/***********************************
+        1. BODY (SCOPED)
+***********************************/
+
+/* Scope everything inside .notfound-page so it doesn't affect other pages */
 .notfound-page * {
   margin: 0;
   padding: 0;

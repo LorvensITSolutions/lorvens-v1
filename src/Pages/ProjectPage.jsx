@@ -28,12 +28,16 @@ import uiuxx from "../assets/uiuxx.jpeg";
 import uiuxxx from "../assets/uiuxxx.jpeg";
 
 import digital from "../assets/digital.jpeg";
-import digitall from "../assets/digitall.jpeg";
-import digitalll from "../assets/digitalll.jpeg";
+import digitall from "../assets/digitall.jpg";
+import digitalll from "../assets/digitalll.Jpeg";
 
 import learn from "../assets/learn.jpeg";
 import learnn from "../assets/learnn.jpeg";
 import learnnn from "../assets/learnnn.jpeg";
+
+import school from "../assets/school .jpg";
+import schooll from "../assets/schooll.jpg";
+import schoolll from "../assets/schoolll .jpg";
 
 // ✨ Enhanced Animation Variants
 const slideVariants = {
@@ -138,9 +142,9 @@ const projects = [
         subtitle: "Smart Learning Environment",
         description: "A modern and interactive school website built with the MERN stack. Features include student portals, teacher dashboards, online admissions, and virtual classroom integration.",
         images: [
-          "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+          school,
+          schooll,
+          schoolll,
         ],
         technologies: ["MongoDB", "Express.js", "React", "Node.js"],
         duration: "5 months",
