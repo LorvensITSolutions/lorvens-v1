@@ -29,7 +29,7 @@ import uiuxxx from "../assets/uiuxxx.jpeg";
 
 import digital from "../assets/digital.jpeg";
 import digitall from "../assets/digitall.jpg";
-import digitalll from "../assets/digitalll.Jpeg";
+import digitalll from "../assets/digitalll.jpeg";
 
 import learn from "../assets/learn.jpeg";
 import learnn from "../assets/learnn.jpeg";
