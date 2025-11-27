@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useNetworkStatus } from "./hooks/useNetworkStatus";
 
@@ -19,10 +19,26 @@ import NotFound from "./Pages/NotFound";
 
 function App() {
   const isOnline = useNetworkStatus();
+  const location = useLocation();
+  
+  // Define valid routes
+  const validRoutes = ["/", "/about", "/services", "/projects", "/contact", "/privacy-policy", "/terms-of-use"];
+  const isServiceDetail = location.pathname.startsWith("/service/") && location.pathname.split("/").length === 3;
+  const isNotFoundPage = !validRoutes.includes(location.pathname) && !isServiceDetail;
 
   // ✔ Show network error page when offline
   if (!isOnline) {
     return <NetworkError />;
+  }
+
+  // ✔ If NotFound page, render standalone without Navbar/Footer/Background
+  if (isNotFoundPage) {
+    return (
+      <>
+        <NotFound />
+        <Toaster />
+      </>
+    );
   }
 
   // ✔ When online → whole website loads normally
@@ -46,9 +62,6 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
-
-          {/* ⭐ If route does NOT exist → Show NotFound */}
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 

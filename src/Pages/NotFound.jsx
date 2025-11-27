@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./NotFound.css";
 
 export default function NotFound() {
+  useEffect(() => {
+    // Ensure page scrolls to top and body has no padding/margin
+    window.scrollTo({ top: 0, behavior: "instant" });
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.overflow = "hidden";
+    
+    return () => {
+      // Cleanup on unmount
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
-    <div className="notfound-page">
+    <div className="notfound-page" style={{ width: "100vw", height: "100vh", margin: 0, padding: 0 }}>
 
       {/* Top gradient line */}
       <header className="top-header"></header>
@@ -42,7 +55,7 @@ export default function NotFound() {
 
           {/* Single Button Only */}
           <div className="error__nav e-nav">
-            <a href="/" className="e-nav__link">   </a>
+            <a href="/" className="e-nav__link"> </a>
           </div>
 
         </div>
