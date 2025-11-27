@@ -75,7 +75,7 @@ const InnovationSection = () => {
         />
         <motion.p
           variants={fadeIn("up", 0.3)}
-          className="max-w-3xl mx-auto text-gray-700 text-lg"
+          className="max-w-3xl mx-auto text-gray-700 text-lg whitespace-nowrap"
         >
           From idea to launch — we craft solutions that are fast, scalable, and designed for impact.
         </motion.p>

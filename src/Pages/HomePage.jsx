@@ -175,7 +175,7 @@ const HomePage = () => {
       <InnovationSection />
 
       {/* ⚡ Enhanced Why Choose Us Section */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 relative">
+      <section className="py-12 px-6 md:px-12 lg:px-20 relative">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -183,7 +183,7 @@ const HomePage = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           {/* Header */}
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
+          <motion.div className="text-center mb-10" variants={fadeInUp}>
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-800 font-medium mb-4"
               whileHover={{ scale: 1.05, boxShadow: "0 4px 12px rgba(255, 165, 0, 0.2)" }}
@@ -323,7 +323,7 @@ const HomePage = () => {
       </section>
 
       {/* ⚡ Enhanced Final CTA Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 text-center relative">
+      <section className="py-12 px-6 md:px-12 lg:px-20 text-center relative">
         {/* Floating Decorative Elements */}
         <motion.div
           className="absolute top-20 left-1/4 w-3 h-3 bg-orange-400 rounded-full opacity-40"
@@ -394,7 +394,7 @@ const HomePage = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed"
             variants={fadeInUp}
           >
             Transform your vision into reality with our cutting-edge digital
@@ -468,7 +468,7 @@ const HomePage = () => {
 
           {/* Trust Indicators with Animation */}
           <motion.div
-            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-500"
+            className="mt-10 flex flex-wrap justify-center items-center gap-8 text-gray-500"
             variants={fadeInUp}
           >
             {[

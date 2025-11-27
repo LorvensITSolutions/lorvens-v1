@@ -1,6 +1,6 @@
 // ContactPage.jsx
-import React, { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Mail,
   MapPin,
@@ -44,15 +44,11 @@ const ParallaxBackground = () => {
 
 // --- ContactInfoCard ---
 const ContactInfoCard = ({ icon: Icon, title, info, delay = 0, gradient }) => {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { once: true, amount: 0.3 });
-
   return (
     <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
-      transition={{ duration: 0.6, delay }}
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.3, delay, ease: "easeOut" }}
       whileHover={{
         y: -5,
         scale: 1.03,
@@ -96,7 +92,8 @@ const ContactPage = () => {
   const headerOpacity = useTransform(scrollY, [0, 300], [1, 0.9]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Instant scroll to top for faster page load
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   const handleSubmit = async (e) => {
@@ -143,10 +140,9 @@ const ContactPage = () => {
 
       {/* CONTACT SECTION (REDUCED GAPS) */}
       <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="relative bg-gradient-to-r from-gray-50 to-orange-50 py-10 sm:py-14 lg:py-16"
       >
         <div className="text-center mb-8 sm:mb-10">
@@ -163,7 +159,12 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
 
             {/* FORM */}
-            <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="xl:col-span-2">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.4, ease: "easeOut" }} 
+              className="xl:col-span-2"
+            >
               <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-6 sm:p-7 lg:p-8 border border-orange-100 relative overflow-hidden">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <input
@@ -227,21 +228,21 @@ const ContactPage = () => {
                 icon={Mail}
                 title="Email Us"
                 info={`yeslorvenssolutions@gmail.com\nConnect with our team for any inquiries`}
-                delay={0.2}
+                delay={0.05}
                 gradient="from-green-500 to-green-600"
               />
               <ContactInfoCard
                 icon={Phone}
                 title="Call Us"
                 info={`+91 7013814030\n+91 4031985921\nAvailable Mon-Fri, 9AM-6PM`}
-                delay={0.3}
+                delay={0.1}
                 gradient="from-purple-500 to-purple-600"
               />
               <ContactInfoCard
                 icon={MapPin}
                 title="Visit Us"
                 info="YES LORVENS SOLUTIONS PVT LTD, Flat No:530, ROAD NO 86, Jubilee Hills, Hyderabad, India, 500096"
-                delay={0.1}
+                delay={0.15}
                 gradient="from-blue-500 to-blue-600"
               />
             </div>

@@ -271,7 +271,7 @@ const ServiceCard = ({ service, index }) => {
 
   return (
     <motion.div
-      className="group relative"
+      className="group relative h-full"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ 
@@ -286,7 +286,7 @@ const ServiceCard = ({ service, index }) => {
       {/* Card Container */}
       <motion.div
         className="relative h-full bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden
-                   group-hover:shadow-2xl transition-all duration-500"
+                   group-hover:shadow-2xl transition-all duration-500 flex flex-col"
         whileHover={{ 
           y: -15,
           scale: 1.02,
@@ -350,9 +350,10 @@ const ServiceCard = ({ service, index }) => {
         </div>
 
         {/* Content Section */}
-        <div className="relative z-10 p-8">
+        <div className="relative z-10 p-8 flex flex-col flex-1">
+          {/* Heading */}
           <motion.h3
-            className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-700 
+            className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-700 
                        transition-colors duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -361,8 +362,9 @@ const ServiceCard = ({ service, index }) => {
             {service.title}
           </motion.h3>
 
+          {/* Paragraph */}
           <motion.p
-            className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base"
+            className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 + 0.5 }}
@@ -372,7 +374,7 @@ const ServiceCard = ({ service, index }) => {
 
           {/* Features List */}
           <motion.div
-            className="mb-6"
+            className="mb-4 flex-1"
             initial={{ opacity: 0, height: 0 }}
             whileInView={{ opacity: 1, height: "auto" }}
             transition={{ duration: 0.6, delay: index * 0.1 + 0.6 }}
@@ -393,33 +395,35 @@ const ServiceCard = ({ service, index }) => {
             </div>
           </motion.div>
 
-          {/* CTA Button */}
-        <Link to={`/service/${service.id}`} className="block w-full">
-  <motion.button
-    className="w-full py-4 px-6 bg-orange-500 text-white font-bold 
-               rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
-               flex items-center justify-center gap-3 group/btn
-               hover:bg-orange-600 active:bg-orange-700"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: index * 0.1 + 0.8 }}
-    whileHover={{ 
-      scale: 1.02,
-      y: -2,
-      transition: { duration: 0.2 }
-    }}
-    whileTap={{ scale: 0.98 }}
-  >
-    <span>Explore Solution</span>
-    <motion.div
-      initial={{ x: 0 }}
-      animate={{ x: isHovered ? 5 : 0 }}
-      transition={{ duration: 0.2 }}
-    >
-      <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
-    </motion.div>
-  </motion.button>
-</Link>
+          {/* CTA Button - Always at bottom */}
+          <div className="mt-auto pt-2">
+            <Link to={`/service/${service.id}`} className="block w-full">
+              <motion.button
+                className="w-full py-4 px-6 bg-orange-500 text-white font-bold 
+                           rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
+                           flex items-center justify-center gap-3 group/btn
+                           hover:bg-orange-600 active:bg-orange-700"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 + 0.8 }}
+                whileHover={{ 
+                  scale: 1.02,
+                  y: -2,
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span>Explore Solution</span>
+                <motion.div
+                  initial={{ x: 0 }}
+                  animate={{ x: isHovered ? 5 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                </motion.div>
+              </motion.button>
+            </Link>
+          </div>
 
         </div>
 
@@ -680,7 +684,7 @@ const Services = () => {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {services.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
