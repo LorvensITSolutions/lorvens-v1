@@ -29,8 +29,17 @@ export default function TermsOfUse() {
           
 
           <p className="text-gray-700 mb-4">
-            <strong>Website:</strong> https://www.yeslorvens.com
-          </p>
+  <strong>Website:</strong>{" "}
+  <a 
+    href="https://www.yeslorvens.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-blue-600 hover:underline"
+  >
+    https://www.yeslorvens.com
+  </a>
+</p>
+
 
           {/* ------------ SECTION 1 ------------ */}
           <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-3">1. Introduction</h3>
@@ -217,16 +226,29 @@ We value your trust and are committed to keeping your personal data safe and sec
           </p>
 
        {/* Contact Email */}
-<p className="text-gray-700 font-semibold flex items-center gap-2">
+{/* Email Link */}
+<a 
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=yeslorvenssolutions@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-gray-700 font-semibold flex items-center gap-2 hover:underline"
+>
   <Mail className="w-5 h-5 text-[#B44A00]" />
   yeslorvenssolutions@gmail.com
-</p>
+</a>
+
 
 {/* Website Link */}
-<p className="text-gray-700 mt-3 mb-4 flex items-center gap-2">
+<a 
+  href="https://www.yeslorvens.com" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="text-gray-700 mt-3 mb-4 flex items-center gap-2 hover:underline"
+>
   <Globe className="w-5 h-5 text-[#B44A00]" />
-  https://www.yeslorvens.com
-</p>
+  www.yeslorvens.com
+</a>
+
 
 
         </div>
