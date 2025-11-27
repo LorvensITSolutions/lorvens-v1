@@ -17,7 +17,7 @@ export default function TermsOfUse() {
 
 
       {/* ---------- CONTENT SECTION ---------- */}
-      <section className="w-full bg-gray-50 py-5 px-10">
+      <section className="w-full bg-gray-50 py-5 px-4">
                      <div className="max-w-7xl mx-auto bg-[#FFF6E5] shadow-md rounded-xl p-8 md:p-12">
 
           {/* ===== EXACT PDF CONTENT — FIXED PLACEMENT ONLY ===== */}
