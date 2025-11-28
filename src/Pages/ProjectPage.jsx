@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ProjectPage.css";
 import { Link } from "react-router-dom";
 import { 
-  
   ExternalLink, 
   Calendar, 
   Users, 
@@ -22,19 +21,15 @@ import { motion, AnimatePresence, useScroll, useTransform, useInView } from "fra
 import onlineshop from "../assets/onlineshop.jpeg";
 import onlineshopp from "../assets/onlineshopp.jpeg";
 import onlineshoppp from "../assets/onlineshoppp.jpeg";
-
 import uiux from "../assets/uiux.jpeg";
 import uiuxx from "../assets/uiuxx.jpeg";
 import uiuxxx from "../assets/uiuxxx.jpeg";
-
 import digital from "../assets/digital.jpeg";
 import digitall from "../assets/digitall.jpg";
 import digitalll from "../assets/digitalll.jpeg";
-
 import learn from "../assets/learn.jpeg";
 import learnn from "../assets/learnn.jpeg";
 import learnnn from "../assets/learnnn.jpeg";
-
 import school from "../assets/school .jpg";
 import schooll from "../assets/schooll.jpg";
 import schoolll from "../assets/schoolll .jpg";
@@ -98,102 +93,80 @@ const floatingVariants = {
   }
 };
 
-// 🔥 Enhanced Projects Data
+// 🔥 Enhanced Projects Data - Unrolled for Performance
 const projects = [
   {
     id: 5,
     title: "E-Commerce Platform Development",
-        subtitle: "Next-Gen Shopping Experience",
-        description: "A comprehensive e-commerce solution built with modern technologies, featuring user authentication, payment integration, inventory management, and admin dashboard with real-time analytics.",
-        images: [
-          onlineshop,
-          onlineshopp,
-          onlineshoppp,
-        ],
-        technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-        duration: "6 months",
-        team: "5 developers",
-        category: "Web Development",
-        status: "Completed",
-        impact: "300% increase in sales",
-        color: "from-blue-500 to-purple-600" 
-      },
-      {
-        id: 2,
-        title: "AI-ML Integration Platform",
-        subtitle: "Intelligent Business Analytics",
-        description: "Advanced analytics platform using machine learning algorithms to provide business intelligence, predictive analytics, and automated decision-making capabilities.",
-        images: [
-        learn,
-        learnn,
-        learnnn,
-        ],
-        technologies: ["Python", "TensorFlow", "D3.js", "PostgreSQL"],
-        duration: "10 months",
-        team: "4 developers",
-        category: "AI/ML",
-        status: "Completed",
-        impact: "85% accuracy improvement",
-        color: "from-green-500 to-teal-600"
-      },
-      {
-        id: 3,
-        title: "Educational Management System",
-        subtitle: "Smart Learning Environment",
-        description: "A modern and interactive school website built with the MERN stack. Features include student portals, teacher dashboards, online admissions, and virtual classroom integration.",
-        images: [
-          school,
-          schooll,
-          schoolll,
-        ],
-        technologies: ["MongoDB", "Express.js", "React", "Node.js"],
-        duration: "5 months",
-        team: "6 developers",
-        category: "Web Development",
-        status: "Completed",
-        impact: "50% efficiency boost",
-        color: "from-orange-500 to-red-600"
-      },
-      {
-        id: 4,
-        title: "Digital Marketing",
-        subtitle: "Growth-Driven Strategy",
-        description: "A results-driven campaign combining SEO, Google Ads, social media marketing, and content strategies to deliver measurable growth and brand awareness.",
-        images: [
-          digital,
-          digitall,
-          digitalll,
-        ],
-        technologies: ["SEO", "Google Ads", "Analytics", "Social Media"],
-        duration: "4 months",
-        team: "3 marketers",
-        category: "Digital Marketing",
-        status: "Completed",
-        impact: "400% ROI increase",
-        color: "from-pink-500 to-violet-600"
-      },
-      {
-        id: 5,
-        title: "UI/UX Design Project",
-        subtitle: "Modern User-Centered Experience",
-        description:
-          "A sleek and intuitive UI/UX design project focused on delivering engaging, user-friendly, and accessible digital experiences. Includes interactive prototypes, responsive layouts, and usability testing for seamless navigation.",
-        images: [
-          uiux,
-          uiuxx,
-          uiuxxx,
-          
-        ],
-        technologies: ["Figma", "Adobe XD", "Sketch", "InVision"],
-        duration: "2 months",
-        team: "3 designers",
-        category: "UI/UX Development",
-        status: "COMPLETED",
-        impact: "Enhanced usability & engagement",
-        color: "from-purple-500 to-pink-600"
-      }
+    subtitle: "Next-Gen Shopping Experience",
+    description: "A comprehensive e-commerce solution built with modern technologies, featuring user authentication, payment integration, inventory management, and admin dashboard with real-time analytics.",
+    images: [onlineshop, onlineshopp, onlineshoppp],
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    duration: "6 months",
+    team: "5 developers",
+    category: "Web Development",
+    status: "Completed",
+    impact: "300% increase in sales",
+    color: "from-blue-500 to-purple-600" 
+  },
+  {
+    id: 2,
+    title: "AI-ML Integration Platform",
+    subtitle: "Intelligent Business Analytics",
+    description: "Advanced analytics platform using machine learning algorithms to provide business intelligence, predictive analytics, and automated decision-making capabilities.",
+    images: [learn, learnn, learnnn],
+    technologies: ["Python", "TensorFlow", "D3.js", "PostgreSQL"],
+    duration: "10 months",
+    team: "4 developers",
+    category: "AI/ML",
+    status: "Completed",
+    impact: "85% accuracy improvement",
+    color: "from-green-500 to-teal-600"
+  },
+  {
+    id: 3,
+    title: "Educational Management System",
+    subtitle: "Smart Learning Environment",
+    description: "A modern and interactive school website built with the MERN stack. Features include student portals, teacher dashboards, online admissions, and virtual classroom integration.",
+    images: [school, schooll, schoolll],
+    technologies: ["MongoDB", "Express.js", "React", "Node.js"],
+    duration: "5 months",
+    team: "6 developers",
+    category: "Web Development",
+    status: "Completed",
+    impact: "50% efficiency boost",
+    color: "from-orange-500 to-red-600"
+  },
+  {
+    id: 4,
+    title: "Digital Marketing",
+    subtitle: "Growth-Driven Strategy",
+    description: "A results-driven campaign combining SEO, Google Ads, social media marketing, and content strategies to deliver measurable growth and brand awareness.",
+    images: [digital, digitall, digitalll],
+    technologies: ["SEO", "Google Ads", "Analytics", "Social Media"],
+    duration: "4 months",
+    team: "3 marketers",
+    category: "Digital Marketing",
+    status: "Completed",
+    impact: "400% ROI increase",
+    color: "from-pink-500 to-violet-600"
+  },
+  {
+    id: 1,
+    title: "UI/UX Design Project",
+    subtitle: "Modern User-Centered Experience",
+    description: "A sleek and intuitive UI/UX design project focused on delivering engaging, user-friendly, and accessible digital experiences. Includes interactive prototypes, responsive layouts, and usability testing for seamless navigation.",
+    images: [uiux, uiuxx, uiuxxx],
+    technologies: ["Figma", "Adobe XD", "Sketch", "InVision"],
+    duration: "2 months",
+    team: "3 designers",
+    category: "UI/UX Development",
+    status: "COMPLETED",
+    impact: "Enhanced usability & engagement",
+    color: "from-purple-500 to-pink-600"
+  }
+];
 
-    ]
 const ParallaxBackground = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
@@ -217,7 +190,7 @@ const ParallaxBackground = () => {
   );
 };
 
-// 🎴 Enhanced Project Card
+// 🎴 Enhanced Project Card - Performance Optimized
 const ProjectCard = ({ project, index }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hovering, setHovering] = useState(false);
@@ -304,17 +277,26 @@ const ProjectCard = ({ project, index }) => {
               </motion.button>
             </div>
 
-            {/* Image indicators */}
+            {/* Image indicators - Unrolled for Performance */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {project.images.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentImageIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    idx === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'
-                  }`}
-                />
-              ))}
+              <button
+                onClick={() => setCurrentImageIndex(0)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  0 === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'
+                }`}
+              />
+              <button
+                onClick={() => setCurrentImageIndex(1)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  1 === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'
+                }`}
+              />
+              <button
+                onClick={() => setCurrentImageIndex(2)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  2 === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'
+                }`}
+              />
             </div>
 
             {/* Status badge */}
@@ -426,7 +408,7 @@ const ProjectCard = ({ project, index }) => {
             </motion.div>
           </motion.div>
 
-          {/* Technologies with enhanced styling */}
+          {/* Technologies - Unrolled for Performance */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -442,22 +424,44 @@ const ProjectCard = ({ project, index }) => {
               </span>
             </div>
             <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, idx) => (
-                <motion.span
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.9 + idx * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:shadow-md transition-all cursor-default"
-                >
-                  {tech}
-                </motion.span>
-              ))}
+              <motion.span
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.9 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:shadow-md transition-all cursor-default"
+              >
+                {project.technologies[0]}
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.0 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:shadow-md transition-all cursor-default"
+              >
+                {project.technologies[1]}
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.1 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:shadow-md transition-all cursor-default"
+              >
+                {project.technologies[2]}
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-3 py-2 rounded-full text-xs sm:text-sm font-medium hover:shadow-md transition-all cursor-default"
+              >
+                {project.technologies[3]}
+              </motion.span>
             </div>
           </motion.div>
-
-          {/* CTA Buttons have been removed as per request */}
         </div>
       </div>
     </motion.div>
@@ -497,10 +501,10 @@ const StatsCounter = ({ number, label, icon: Icon }) => {
     if (isInView) {
       const timer = setInterval(() => {
         setCount(prev => {
-          if (prev < number) {
-            return prev + Math.ceil(number / 50);
-          }
-          return number;
+         if (prev < number) {
+           return prev + Math.ceil(number / 50);
+         }
+         return number;
         });
       }, 30);
       return () => clearInterval(timer);
@@ -539,9 +543,13 @@ const ProjectsPage = () => {
   const headerY = useTransform(scrollY, [0, 300], [0, -50]);
   const headerOpacity = useTransform(scrollY, [0, 300], [1, 0.8]);
 
-  const categories = ["All", ...new Set(projects.map((p) => p.category))];
-  const filteredProjects =
-    filter === "All" ? projects : projects.filter((p) => p.category === filter);
+  // Pre-computed categories - Static for performance
+  const categories = ["All", "Web Development", "AI/ML", "Digital Marketing", "UI/UX Development"];
+  
+  // Static filtered projects based on filter state
+  const filteredProjects = filter === "All" 
+    ? projects 
+    : projects.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FFF6E5] via-orange-50 to-[#FFF6E5] relative overflow-hidden">
@@ -549,8 +557,8 @@ const ProjectsPage = () => {
       
       {/* Enhanced Header with Parallax */}
       <motion.div 
-        style={{ y: headerY, opacity: headerOpacity,  }}
-        className=" icon-zap relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-24 overflow-hidden"
+        style={{ y: headerY, opacity: headerOpacity }}
+        className="icon-zap relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-24 overflow-hidden"
       >
         {/* Animated background elements */}
         <div className="absolute inset-0">
@@ -591,7 +599,7 @@ const ProjectsPage = () => {
               whileHover={{ scale: 1.05 }}
               className="inline-block mb-4"
             >
-              <Zap size={48} className=" text-white mx-auto" />
+              <Zap size={48} className="text-white mx-auto" />
             </motion.div>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white">
               Our 
@@ -606,36 +614,19 @@ const ProjectsPage = () => {
               </motion.span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-  Discover the innovative solutions we've crafted with{" "}
-  <motion.span
-    className="text-yellow-300 font-bold whitespace-nowrap"
-    whileHover={{ scale: 1.1 }}
-  >
-    Passion &amp; Technology
-  </motion.span>
-</p>
-
+             Discover the innovative solutions we've crafted with{" "}
+             <motion.span
+               className="text-yellow-300 font-bold whitespace-nowrap"
+               whileHover={{ scale: 1.1 }}
+             >
+               Passion & Technology
+             </motion.span>
+            </p>
           </motion.div>
         </motion.div>
-
-
-        {/* <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="container mx-auto px-4 sm:px-6 mt-12 sm:mt-16"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            <StatsCounter number={50} label="Projects Completed" icon={Trophy} />
-            <StatsCounter number={100} label="Happy Clients" icon={Users} />
-            <StatsCounter number={25} label="Technologies" icon={Code} />
-            <StatsCounter number={5} label="Years Experience" icon={Target} />
-          </div>
-        </motion.div> */}
       </motion.div>
 
-      {/* Enhanced Filter Section */}
+      {/* Enhanced Filter Section - Unrolled Categories */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -648,14 +639,31 @@ const ProjectsPage = () => {
             <span className="font-semibold text-gray-700 text-sm sm:text-base">Filter Projects</span>
           </div>
           <div className="flex justify-center gap-2 sm:gap-4 flex-wrap">
-            {categories.map((cat) => (
-              <FilterButton
-                key={cat}
-                category={cat}
-                isActive={filter === cat}
-                onClick={() => setFilter(cat)}
-              />
-            ))}
+            <FilterButton
+              category="All"
+              isActive={filter === "All"}
+              onClick={() => setFilter("All")}
+            />
+            <FilterButton
+              category="Web Development"
+              isActive={filter === "Web Development"}
+              onClick={() => setFilter("Web Development")}
+            />
+            <FilterButton
+              category="AI/ML"
+              isActive={filter === "AI/ML"}
+              onClick={() => setFilter("AI/ML")}
+            />
+            <FilterButton
+              category="Digital Marketing"
+              isActive={filter === "Digital Marketing"}
+              onClick={() => setFilter("Digital Marketing")}
+            />
+            <FilterButton
+              category="UI/UX Development"
+              isActive={filter === "UI/UX Development"}
+              onClick={() => setFilter("UI/UX Development")}
+            />
           </div>
         </div>
       </motion.div>
@@ -760,34 +768,24 @@ const ProjectsPage = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact">
-  <motion.button
-    whileHover={{ 
-      scale: 1.05,
-      boxShadow: "0px 15px 35px rgba(249,115,22,0.5)"
-    }}
-    whileTap={{ scale: 0.95 }}
-    className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 
-               rounded-xl font-bold text-lg flex items-center group 
-               hover:from-orange-600 hover:to-orange-700 transition-all shadow-xl"
-  >
-    <Sparkles size={20} className="mr-3" />
-    Start Your Project
-    <ArrowRight
-      size={20}
-      className="ml-3 group-hover:translate-x-1 transition-transform"
-    />
-  </motion.button>
-</Link>
-              
-              {/* <Link to="/projects">
-  <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
-  >
-    View Portfolio
-  </motion.button>
-</Link> */}
+                <motion.button
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0px 15px 35px rgba(249,115,22,0.5)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 
+                           rounded-xl font-bold text-lg flex items-center group 
+                           hover:from-orange-600 hover:to-orange-700 transition-all shadow-xl"
+                >
+                  <Sparkles size={20} className="mr-3" />
+                  Start Your Project
+                  <ArrowRight
+                    size={20}
+                    className="ml-3 group-hover:translate-x-1 transition-transform"
+                  />
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>

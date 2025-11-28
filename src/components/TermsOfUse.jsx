@@ -5,8 +5,7 @@ import { Mail, Globe } from "lucide-react";
 export default function TermsOfUse() {
   return (
     <div className="w-full">
-
-      {/* ---------- HERO SECTION ---------- */}
+     {/* ---------- HERO SECTION ---------- */}
    <section className="w-full bg-[#FFEAD1] min-h-[260px] md:min-h-[300px] lg:min-h-[330px] px-8 pt-35 pb-10">
   <div className="max-w-7xl mx-auto mt-4">
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#BF5500] leading-tight">
@@ -14,23 +13,15 @@ export default function TermsOfUse() {
     </h1>
   </div>
 </section>
-
-
       {/* ---------- CONTENT SECTION ---------- */}
       <section className="w-full bg-gray-50 py-5 px-4">
                      <div className="max-w-7xl mx-auto bg-[#FFF6E5] shadow-md rounded-xl p-8 md:p-12">
-
           {/* ===== EXACT PDF CONTENT — FIXED PLACEMENT ONLY ===== */}
-
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             Yes Lorvens Solutions Pvt. Ltd. Terms of Use
           </h2>
-
-          
-
          <p className="text-gray-700 mb-4 flex items-center gap-3 font-semibold group">
   <strong className="text-lg">Website:</strong>
-
   <a
     href="https://www.yeslorvens.com"
     target="_blank"
@@ -45,10 +36,6 @@ export default function TermsOfUse() {
     </span>
   </a>
 </p>
-
-
-
-
           {/* ------------ SECTION 1 ------------ */}
           <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-3">1. Introduction</h3>
          <p className="text-gray-700 mb-6">
@@ -67,8 +54,6 @@ export default function TermsOfUse() {
   accessing or using the Website. We kindly request that you read these terms carefully before using
   any services or features available on this Website.
 </p>
-
-
           <p className="text-gray-600 mb-6">
   This Website is provided by{" "}
   <strong
@@ -79,8 +64,6 @@ export default function TermsOfUse() {
   (hereinafter referred to as <strong>“Yes Lorvens”</strong>), 
   a company incorporated under the applicable provisions of the Companies Act, India, with its registered office located at Flat No:530/A, ROAD NO 86, Jubilee Hills, Hyderabad, India, 500096.
 </p>
-
-
           {/* ------------ SECTION 2 ------------ */}
           <h3 className="text-xl font-semibold text-gray-800 mt-10 mb-3">2. Purpose of the Website</h3>
 
@@ -95,10 +78,8 @@ export default function TermsOfUse() {
             <li>Help visitors understand what we offer</li>
             <li>Support communication with clients, partners, and visitors</li>
           </ul>
-
           {/* ------------ SECTION 3 ------------ */}
           <h3 className="text-xl font-semibold text-gray-800 mt-10 mb-3">3. Acceptable Use</h3>
-
           <p className="text-gray-700 mb-6">
             We kindly request that you use our website responsibly. <br />
            By using our website, you agree <strong> NOT</strong>
@@ -114,20 +95,15 @@ export default function TermsOfUse() {
             <li>Copy or reproduce website content without permission</li>
           </ul>
           We aim to maintain a positive and secure environment for all visitors. 
-
-
           {/* ------------ SECTION 4 ------------ */}
           <h3 className="text-xl font-semibold text-gray-800 mt-10 mb-3">4. Intellectual Property</h3>
-
           <p className="text-gray-700 mb-6">
             All content made available on this Website — including the text, graphics, images, designs, logos,
             icons, software, layouts, and overall Website structure — is the exclusive property of Yes Lorvens
             Solutions Pvt. Ltd. and is protected under applicable copyright, trademark, and intellectual
             property laws.
           </p>
-
           <p className="text-gray-700 mb-4">Subject to Your compliance with these Terms of Use, You are permitted to:</p>
-
           <ul className="list-disc ml-8 text-gray-700 space-y-3 mb-8">
             <li>View and access pages on the Website for informational purposes</li>
             <li>Contact Yes Lorvens Solutions Pvt. Ltd. for any inquiries or support</li>
@@ -271,10 +247,6 @@ We value your trust and are committed to keeping your personal data safe and sec
   />
   <span className="group-hover:underline">www.yeslorvens.com</span>
 </a>
-
-
-
-
         </div>
       </section>
     </div>

@@ -45,18 +45,15 @@ const ParallaxBackground = () => {
 };
 
 // -----------------------------------------
-// UPDATED ContactInfoCard with Icon Left + Title Right
+// ContactInfoCard - Performance Optimized
 // -----------------------------------------
 const ContactInfoCard = ({ icon: Icon, title, info, delay = 0, gradient }) => {
-  // Convert info safely
   const safeInfo = String(info || "");
 
-  // Detect Content
   const isEmail = safeInfo.includes("@");
   const isPhone = safeInfo.includes("+91");
   const isLocation = !isEmail && !isPhone;
 
-  // Extract lines
   const lines = safeInfo.split("\n").filter(Boolean);
   const email = isEmail ? lines[0] : null;
   const phones = isPhone ? lines.slice(0, 2) : [];
@@ -91,9 +88,8 @@ const ContactInfoCard = ({ icon: Icon, title, info, delay = 0, gradient }) => {
         </h3>
       </div>
 
-      {/* CONTENT */}
+      {/* CONTENT - Unrolled for Performance */}
       <div className="text-gray-700 leading-relaxed space-y-1">
-
         {/* EMAIL */}
         {email && (
           <a
@@ -104,17 +100,23 @@ const ContactInfoCard = ({ icon: Icon, title, info, delay = 0, gradient }) => {
           </a>
         )}
 
-        {/* PHONE NUMBERS */}
-        {phones.length > 0 &&
-          phones.map((number, index) => (
-            <a
-              key={index}
-              href={`tel:${number}`}
-              className="font-semibold hover:text-[#FFA559] cursor-pointer transition-all duration-300 block"
-            >
-              {number}
-            </a>
-          ))}
+        {/* PHONE NUMBERS - Unrolled */}
+        {phones[0] && (
+          <a
+            href={`tel:${phones[0]}`}
+            className="font-semibold hover:text-[#FFA559] cursor-pointer transition-all duration-300 block"
+          >
+            {phones[0]}
+          </a>
+        )}
+        {phones[1] && (
+          <a
+            href={`tel:${phones[1]}`}
+            className="font-semibold hover:text-[#FFA559] cursor-pointer transition-all duration-300 block"
+          >
+            {phones[1]}
+          </a>
+        )}
 
         {/* LOCATION → Google Maps */}
         {location && !email && !isPhone && (
@@ -278,16 +280,15 @@ const ContactPage = () => {
             </div>
           </motion.div>
 
-          {/* CONTACT CARDS */}
+          {/* CONTACT CARDS - All Content Preserved */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-6">
             <ContactInfoCard
-  icon={Mail}
-  title="Email Us"
-  info={`yeslorvenssolutions@gmail.com\nConnect with our team for any inquiries`}
-  delay={0.05}
-  gradient="from-green-500 to-green-600"
-/>
-
+              icon={Mail}
+              title="Email Us"
+              info={`yeslorvenssolutions@gmail.com\nConnect with our team for any inquiries`}
+              delay={0.05}
+              gradient="from-green-500 to-green-600"
+            />
 
             <ContactInfoCard
               icon={Phone}

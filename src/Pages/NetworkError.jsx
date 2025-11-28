@@ -64,32 +64,70 @@ export default function NetworkError() {
         />
       </div>
 
-      {/* Floating Particles */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 bg-orange-400 rounded-full opacity-40"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
-            opacity: [0.2, 0.6, 0.2],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      {/* Optimized Floating Particles - Static positions */}
+      <motion.div
+        className="absolute w-2 h-2 bg-orange-400 rounded-full opacity-40"
+        style={{ left: '10%', top: '20%' }}
+        animate={{
+          y: [0, -30, 0],
+          x: [0, 5, 0],
+          opacity: [0.2, 0.6, 0.2],
+        }}
+        transition={{
+          duration: 3.5,
+          repeat: Infinity,
+          delay: 0,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute w-2 h-2 bg-orange-400 rounded-full opacity-40"
+        style={{ left: '20%', top: '40%' }}
+        animate={{
+          y: [0, -25, 0],
+          x: [0, -8, 0],
+          opacity: [0.2, 0.6, 0.2],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          delay: 0.3,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute w-2 h-2 bg-orange-400 rounded-full opacity-40"
+        style={{ left: '80%', top: '30%' }}
+        animate={{
+          y: [0, -35, 0],
+          x: [0, 12, 0],
+          opacity: [0.2, 0.6, 0.2],
+        }}
+        transition={{
+          duration: 3.2,
+          repeat: Infinity,
+          delay: 0.6,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute w-2 h-2 bg-orange-400 rounded-full opacity-40"
+        style={{ left: '90%', top: '70%' }}
+        animate={{
+          y: [0, -28, 0],
+          x: [0, -6, 0],
+          opacity: [0.2, 0.6, 0.2],
+        }}
+        transition={{
+          duration: 4.2,
+          repeat: Infinity,
+          delay: 1.2,
+          ease: "easeInOut",
+        }}
+      />
 
       {/* Main Content */}
       <div className="relative z-10 max-w-2xl mx-auto">
-
         {/* Enhanced Error Icon with Interactive Elements */}
         <motion.div variants={itemVariants} className="mb-8 flex justify-center">
           <motion.div
@@ -146,29 +184,83 @@ export default function NetworkError() {
                 />
               </motion.svg>
 
-              {/* Spark Effects */}
-              {[...Array(4)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full"
-                  style={{
-                    top: '50%',
-                    left: '50%',
-                  }}
-                  animate={{
-                    x: Math.cos((i * Math.PI) / 2) * 40,
-                    y: Math.sin((i * Math.PI) / 2) * 40,
-                    opacity: [0, 1, 0],
-                    scale: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.2,
-                    ease: "easeOut",
-                  }}
-                />
-              ))}
+              {/* Static Spark Effects - Unrolled */}
+              <motion.div
+                className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                }}
+                animate={{
+                  x: 40,
+                  y: 0,
+                  opacity: [0, 1, 0],
+                  scale: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0,
+                  ease: "easeOut",
+                }}
+              />
+              <motion.div
+                className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                }}
+                animate={{
+                  x: 0,
+                  y: -40,
+                  opacity: [0, 1, 0],
+                  scale: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0.2,
+                  ease: "easeOut",
+                }}
+              />
+              <motion.div
+                className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                }}
+                animate={{
+                  x: -40,
+                  y: 0,
+                  opacity: [0, 1, 0],
+                  scale: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0.4,
+                  ease: "easeOut",
+                }}
+              />
+              <motion.div
+                className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                }}
+                animate={{
+                  x: 0,
+                  y: 40,
+                  opacity: [0, 1, 0],
+                  scale: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0.6,
+                  ease: "easeOut",
+                }}
+              />
             </motion.div>
           </motion.div>
         </motion.div>
@@ -264,28 +356,51 @@ export default function NetworkError() {
           />
         </motion.button>
 
-        {/* Enhanced Connection Indicator */}
+        {/* Enhanced Connection Indicator - Unrolled */}
         <motion.div 
           variants={itemVariants} 
           className="mt-10 flex items-center justify-center gap-3"
         >
           <div className="flex gap-1.5">
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="w-2.5 h-2.5 bg-red-500 rounded-full shadow-lg"
-                animate={{ 
-                  opacity: [0.3, 1, 0.3],
-                  scale: [0.8, 1.2, 0.8],
-                }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity,
-                  delay: i * 0.2,
-                  ease: "easeInOut"
-                }}
-              />
-            ))}
+            <motion.div
+              className="w-2.5 h-2.5 bg-red-500 rounded-full shadow-lg"
+              animate={{ 
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.2, 0.8],
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity,
+                delay: 0,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="w-2.5 h-2.5 bg-red-500 rounded-full shadow-lg"
+              animate={{ 
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.2, 0.8],
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity,
+                delay: 0.2,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="w-2.5 h-2.5 bg-red-500 rounded-full shadow-lg"
+              animate={{ 
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.2, 0.8],
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity,
+                delay: 0.4,
+                ease: "easeInOut"
+              }}
+            />
           </div>
           <motion.span 
             className="text-base text-gray-500 font-medium"

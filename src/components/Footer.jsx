@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   return (
     <motion.footer
@@ -19,10 +18,8 @@ const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="bg-[#FFF6E5] text-[#1F1F1F] pt-12 pb-6 px-4 sm:px-6 md:px-12 border-t border-orange-200"
-    >
+      className="bg-[#FFF6E5] text-[#1F1F1F] pt-12 pb-6 px-4 sm:px-6 md:px-12 border-t border-orange-200"    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
-
         {/* Brand */}
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold text-[#0B2149] mb-2 tracking-wide">
@@ -41,7 +38,6 @@ const Footer = () => {
             >
               <Instagram className="w-6 h-6" />
             </motion.a>
-
             <motion.a
               href="https://www.linkedin.com/company/yes-lorvens-solutions-pvt-ltd"
               target="_blank"
@@ -51,7 +47,6 @@ const Footer = () => {
             >
               <Linkedin className="w-6 h-6" />
             </motion.a>
-
             <motion.a
               href="https://www.facebook.com/yeslorvens"
               target="_blank"
@@ -61,7 +56,6 @@ const Footer = () => {
             >
               <Facebook className="w-6 h-6" />
             </motion.a>
-
             <motion.a
               href="https://twitter.com/yeslorvens"
               target="_blank"
@@ -73,7 +67,6 @@ const Footer = () => {
             </motion.a>
           </div>
         </div>
-
         {/* Quick Links */}
         <div>
           <h3 className="text-lg font-semibold text-[#0B2149] mb-3">
@@ -87,18 +80,15 @@ const Footer = () => {
             <li><Link to="/contact" className="hover:text-orange-600 transition">Contact</Link></li>
           </ul>
         </div>
-
         {/* Services */}
         <div>
   <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Our Services</h3>
   <ul className="space-y-2 text-sm">
-
     <li>
       <Link to="/service/web-development" className="hover:text-orange-600 transition">
         Web Development
       </Link>
     </li>
-
     <li>
       <Link to="/service/mobile-development" className="hover:text-orange-600 transition">
         Mobile Apps
@@ -110,42 +100,33 @@ const Footer = () => {
         UI/UX Design
       </Link>
     </li>
-
     <li>
       <Link to="/service/digital-marketing" className="hover:text-orange-600 transition">
         Digital Marketing
       </Link>
     </li>
-
     <li>
       <Link to="/service/ai-ml-integration" className="hover:text-orange-600 transition">
         AI/ML Integrations
       </Link>
     </li>
-
     <li>
       <Link to="/service/school-website" className="hover:text-orange-600 transition">
         School Website Development
       </Link>
     </li>
-
     <li>
       <Link to="/service/ecommerce-website" className="hover:text-orange-600 transition">
         E-Commerce Websites
       </Link>
     </li>
-
     <li>
       <Link to="/service/portfolio-building" className="hover:text-orange-600 transition">
         Portfolio Building
       </Link>
     </li>
-
   </ul>
 </div>
-
-
-
         {/* Contact */}
       <div>
   <h3 className="text-lg font-semibold text-[#0B2149] mb-3">Contact</h3>
@@ -153,7 +134,6 @@ const Footer = () => {
 
     <li className="flex items-center gap-2">
   <Phone className="w-5 h-5 text-orange-600 group-hover:scale-110 transition-all duration-300" />
-
   <span className="flex flex-col">
     <a
       href="tel:+917013814030"
@@ -161,7 +141,6 @@ const Footer = () => {
     >
       +91 7013814030
     </a>
-
     <a
       href="tel:+914031985921"
       className="hover:text-orange-600 transition cursor-pointer text-base"
@@ -170,12 +149,8 @@ const Footer = () => {
     </a>
   </span>
 </li>
-
-
-
   <li className="flex items-center gap-2">
   <Mail className="w-4 h-4 text-orange-600" />
-
   <a
     href={
       "https://mail.google.com/mail/?view=cm&fs=1" +
@@ -190,8 +165,6 @@ const Footer = () => {
     info@yeslorvens.com
   </a>
 </li>
-
-
    <li className="flex items-start gap-2">
   <MapPin className="w-4 h-4 text-orange-600 mt-[2px]" />
   <span>
@@ -206,17 +179,12 @@ const Footer = () => {
     </a>
   </span>
 </li>
-
-
   </ul>
 </div>
-
-
-        {/* SUPPORT FIELD (NEW) */}
+       {/* SUPPORT FIELD (NEW) */}
       <div>
   <h3 className="text-lg font-semibold text-[#0B2149] mb-3"> Legal </h3>
   <ul className="space-y-2 text-sm">
-
     {/* Privacy Policy */}
     <li>
       <Link
@@ -226,7 +194,6 @@ const Footer = () => {
         Privacy Policy
       </Link>
     </li>
-
     {/* Terms of Use */}
     <li>
       <Link
@@ -236,20 +203,14 @@ const Footer = () => {
         Terms of Use
       </Link>
     </li>
-
   </ul>
 </div>
-
-
       </div>
-      
-
-      {/* Footer Bottom */}
+          {/* Footer Bottom */}
       <div className="mt-10 border-t border-orange-200 pt-4 text-center text-sm text-gray-500">
         &copy; {new Date().getFullYear()} YES LORVENS. All rights reserved.
       </div>
     </motion.footer>
   );
 };
-
 export default Footer;
