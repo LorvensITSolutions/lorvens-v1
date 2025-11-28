@@ -28,39 +28,58 @@ export default function TermsOfUse() {
 
           
 
-          <p className="text-gray-700 mb-4">
-  <strong>Website:</strong>{" "}
-  <a 
-    href="https://www.yeslorvens.com" 
-    target="_blank" 
+         <p className="text-gray-700 mb-4 flex items-center gap-3 font-semibold group">
+  <strong className="text-lg">Website:</strong>
+
+  <a
+    href="https://www.yeslorvens.com"
+    target="_blank"
     rel="noopener noreferrer"
-    className="text-blue-600 hover:underline"
+    className="text-gray-700 hover:text-[#B44A00] transition-all duration-300 flex items-center gap-2"
   >
-    https://www.yeslorvens.com
+    <Globe 
+      className="w-6 h-6 text-[#B44A00] group-hover:scale-125 group-hover:rotate-12 transition-all duration-300"
+    />
+    <span className="text-lg font-semibold group-hover:underline">
+      www.yeslorvens.com
+    </span>
   </a>
 </p>
 
 
+
+
           {/* ------------ SECTION 1 ------------ */}
           <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-3">1. Introduction</h3>
-          <p className="text-gray-700 mb-6">
-            Terms of Use  Yes Lorvens Solutions Pvt. Ltd. <br /><br />
-            The use of any product, service, or feature available through the internet website accessible at
-            <strong> www.yeslorvens.com </strong>  by any visitor or user shall be governed by the following Terms of Use.<br /><br />
-            The following terms and conditions shall be deemed to have been accepted by the User upon
-            accessing or using the Website. We kindly request that you read these terms carefully before using
-            any services or features available on this Website.
-          </p>
-
-          <p className="text-gray-600 mb-6">
-            <p className="text-gray-600 mb-6">
-        
-  This Website is provided by <strong>Yes Lorvens Solutions Pvt. Ltd.</strong> (hereinafter referred to as <strong>“Yes Lorvens”</strong>), 
-   a company incorporated under the applicable provisions of the Companies Act, India, with its registered office located at Flat No:530/A, ROAD NO 86, Jubilee Hills, Hyderabad, India, 500096.
+         <p className="text-gray-700 mb-6">
+  Terms of Use Yes Lorvens Solutions Pvt. Ltd. <br /><br />
+  The use of any product, service, or feature available through the internet website accessible at 
+  <a
+    href="https://www.yeslorvens.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-semibold text-[#B44A00] hover:underline hover:text-[#8A3600] transition-all duration-300"
+  >
+    {" "}www.yeslorvens.com
+  </a> 
+  {" "}by any visitor or user shall be governed by the following Terms of Use.<br /><br />
+  The following terms and conditions shall be deemed to have been accepted by the User upon
+  accessing or using the Website. We kindly request that you read these terms carefully before using
+  any services or features available on this Website.
 </p>
 
-    
-          </p>
+
+          <p className="text-gray-600 mb-6">
+  This Website is provided by{" "}
+  <strong
+    className="text-gray-800 transition-all duration-300 hover:text-[#FFA559] cursor-pointer"
+  >
+    Yes Lorvens Solutions Pvt. Ltd.
+  </strong>{" "}
+  (hereinafter referred to as <strong>“Yes Lorvens”</strong>), 
+  a company incorporated under the applicable provisions of the Companies Act, India, with its registered office located at Flat No:530/A, ROAD NO 86, Jubilee Hills, Hyderabad, India, 500096.
+</p>
+
 
           {/* ------------ SECTION 2 ------------ */}
           <h3 className="text-xl font-semibold text-gray-800 mt-10 mb-3">2. Purpose of the Website</h3>
@@ -227,27 +246,32 @@ We value your trust and are committed to keeping your personal data safe and sec
 
        {/* Contact Email */}
 {/* Email Link */}
-<a 
+{/* Email Link */}
+<a
   href="https://mail.google.com/mail/?view=cm&fs=1&to=yeslorvenssolutions@gmail.com"
   target="_blank"
   rel="noopener noreferrer"
-  className="text-gray-700 font-semibold flex items-center gap-2 hover:underline"
+  className="text-gray-700 font-semibold flex items-center gap-3 hover:text-[#B44A00] transition-all duration-300 group"
 >
-  <Mail className="w-5 h-5 text-[#B44A00]" />
-  yeslorvenssolutions@gmail.com
+  <Mail 
+    className="w-6 h-6 text-[#B44A00] group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" 
+  />
+  <span className="group-hover:underline">yeslorvenssolutions@gmail.com</span>
 </a>
-
 
 {/* Website Link */}
-<a 
-  href="https://www.yeslorvens.com" 
-  target="_blank" 
+<a
+  href="https://www.yeslorvens.com"
+  target="_blank"
   rel="noopener noreferrer"
-  className="text-gray-700 mt-3 mb-4 flex items-center gap-2 hover:underline"
+  className="text-gray-700 font-semibold mt-3 mb-4 flex items-center gap-3 hover:text-[#B44A00] transition-all duration-300 group"
 >
-  <Globe className="w-5 h-5 text-[#B44A00]" />
-  www.yeslorvens.com
+  <Globe 
+    className="w-6 h-6 text-[#B44A00] group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" 
+  />
+  <span className="group-hover:underline">www.yeslorvens.com</span>
 </a>
+
 
 
 

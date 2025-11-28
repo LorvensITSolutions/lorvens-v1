@@ -33,10 +33,15 @@ export default function SecurityPolicy() {
             and stakeholders.
           </p>
 
-          <p className="text-gray-700 mb-4">
-            <strong>Our Security Vision:</strong> “To make Yes Lorvens Solutions secure, resilient, and adaptive to evolving
-            technological threats, disruptions, and operational risks.”
-          </p>
+         <p className="text-gray-700 mb-4">
+  <strong className="transition-all duration-300 hover:text-[#FFA559] cursor-pointer">
+    Our Security Vision:
+  </strong>
+  {" "}
+  “To make Yes Lorvens Solutions secure, resilient, and adaptive to evolving
+  technological threats, disruptions, and operational risks.”
+</p>
+
 
           <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
             2. Policy Objective
@@ -154,12 +159,42 @@ export default function SecurityPolicy() {
           </h4>
           <p className="text-gray-700 mb-4"> We follow:</p>
           <ul className="list-disc ml-6 text-gray-700 space-y-1">
-            <li><strong>Identify</strong> risks and vulnerabilities</li>
-            <li><strong>Protect</strong> systems using preventive controls</li>
-            <li><strong>Detect</strong> anomalies and incidents</li>
-            <li><strong>Respond</strong> swiftly to threats and breaches</li>
-            <li><strong>Recover</strong> operations to minimize impact</li>
-          </ul>
+  <li>
+    <strong className="transition-all duration-300 hover:text-[#FFA559] cursor-pointer">
+      Identify
+    </strong>{" "}
+    risks and vulnerabilities
+  </li>
+
+  <li>
+    <strong className="transition-all duration-300 hover:text-[#FFA559] cursor-pointer">
+      Protect
+    </strong>{" "}
+    systems using preventive controls
+  </li>
+
+  <li>
+    <strong className="transition-all duration-300 hover:text-[#FFA559] cursor-pointer">
+      Detect
+    </strong>{" "}
+    anomalies and incidents
+  </li>
+
+  <li>
+    <strong className="transition-all duration-300 hover:text-[#FFA559] cursor-pointer">
+      Respond
+    </strong>{" "}
+    swiftly to threats and breaches
+  </li>
+
+  <li>
+    <strong className="transition-all duration-300 hover:text-[#FFA559] cursor-pointer">
+      Recover
+    </strong>{" "}
+    operations to minimize impact
+  </li>
+</ul>
+
 
           <h4 className="text-lg font-semibold text-gray-800 mt-4 mb-2">
             4.9 Third-Party & Supply Chain Security

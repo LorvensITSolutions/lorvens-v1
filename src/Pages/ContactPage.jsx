@@ -13,7 +13,9 @@ import {
 import useContactStore from "../stores/useContactStore";
 import "./ProjectPage.css";
 
-// --- ParallaxBackground ---
+// -----------------------------------------
+// Parallax Background
+// -----------------------------------------
 const ParallaxBackground = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 1000], [0, -300]);
@@ -24,53 +26,118 @@ const ParallaxBackground = () => {
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <motion.div
         style={{ y: y1 }}
-        className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-orange-300 to-orange-400 rounded-full opacity-10 blur-xl"
+        className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-orange-300 to-orange-400 blur-xl opacity-10 rounded-full"
       />
       <motion.div
         style={{ y: y2 }}
-        className="absolute top-60 right-20 w-32 h-32 bg-gradient-to-r from-blue-300 to-purple-400 rounded-full opacity-10 blur-xl"
+        className="absolute top-60 right-20 w-32 h-32 bg-gradient-to-r from-blue-300 to-purple-400 blur-xl opacity-10 rounded-full"
       />
       <motion.div
         style={{ y: y3 }}
-        className="absolute bottom-40 left-1/4 w-28 h-28 bg-gradient-to-r from-pink-300 to-rose-400 rounded-full opacity-10 blur-xl"
+        className="absolute bottom-40 left-1/4 w-28 h-28 bg-gradient-to-r from-pink-300 to-rose-400 blur-xl opacity-10 rounded-full"
       />
       <motion.div
         style={{ y: y1 }}
-        className="absolute bottom-20 right-1/3 w-24 h-24 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-10 blur-xl"
+        className="absolute bottom-20 right-1/3 w-24 h-24 bg-gradient-to-r from-green-300 to-teal-400 blur-xl opacity-10 rounded-full"
       />
     </div>
   );
 };
 
-// --- ContactInfoCard ---
+// -----------------------------------------
+// UPDATED ContactInfoCard with Icon Left + Title Right
+// -----------------------------------------
 const ContactInfoCard = ({ icon: Icon, title, info, delay = 0, gradient }) => {
+  // Convert info safely
+  const safeInfo = String(info || "");
+
+  // Detect Content
+  const isEmail = safeInfo.includes("@");
+  const isPhone = safeInfo.includes("+91");
+  const isLocation = !isEmail && !isPhone;
+
+  // Extract lines
+  const lines = safeInfo.split("\n").filter(Boolean);
+  const email = isEmail ? lines[0] : null;
+  const phones = isPhone ? lines.slice(0, 2) : [];
+  const location = isLocation ? safeInfo : null;
+  const description = lines[2] || null;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.3, delay, ease: "easeOut" }}
-      whileHover={{
-        y: -5,
-        scale: 1.03,
-        boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
-      }}
-      className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-orange-100 group"
+      transition={{ duration: 0.3, delay }}
+      whileHover={{ y: -5, scale: 1.03, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+      className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-orange-100 transition-all duration-300 group"
     >
-      <motion.div
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${gradient} mb-4`}
-      >
-        <Icon size={24} className="text-white" />
-      </motion.div>
-      <h3 className="font-bold text-gray-800 mb-2 text-lg group-hover:text-orange-600 transition-colors">
-        {title}
-      </h3>
-      <p className="text-gray-600 leading-relaxed whitespace-pre-line">{info}</p>
+      {/* TOP ROW: Icon + Title */}
+      <div className="flex items-center gap-4 mb-4">
+        <motion.div
+          initial={{ rotate: 0, opacity: 1 }}
+          animate={{
+            rotate: [0, 8, -8, 0],
+            opacity: [1, 0.8, 1],
+          }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          whileHover={{ rotate: 5, scale: 1.15 }}
+          className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${gradient}`}
+        >
+          <Icon size={28} className="text-white" />
+        </motion.div>
+
+        <h3 className="text-lg font-bold text-gray-800 group-hover:text-orange-600 transition-colors">
+          {title}
+        </h3>
+      </div>
+
+      {/* CONTENT */}
+      <div className="text-gray-700 leading-relaxed space-y-1">
+
+        {/* EMAIL */}
+        {email && (
+          <a
+            href={`mailto:${email}`}
+            className="font-semibold hover:text-[#FFA559] cursor-pointer transition-all duration-300 block"
+          >
+            {email}
+          </a>
+        )}
+
+        {/* PHONE NUMBERS */}
+        {phones.length > 0 &&
+          phones.map((number, index) => (
+            <a
+              key={index}
+              href={`tel:${number}`}
+              className="font-semibold hover:text-[#FFA559] cursor-pointer transition-all duration-300 block"
+            >
+              {number}
+            </a>
+          ))}
+
+        {/* LOCATION → Google Maps */}
+        {location && !email && !isPhone && (
+          <a
+            href={`https://maps.google.com/?q=${encodeURIComponent(location)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:text-[#FFA559] cursor-pointer transition-all duration-300 block"
+          >
+            {location}
+          </a>
+        )}
+
+        {/* Description */}
+        {description && <p className="text-gray-600">{description}</p>}
+      </div>
     </motion.div>
   );
 };
 
-// --- ContactPage ---
+// -----------------------------------------
+// Contact Page
+// -----------------------------------------
 const ContactPage = () => {
   const {
     name,
@@ -92,7 +159,6 @@ const ContactPage = () => {
   const headerOpacity = useTransform(scrollY, [0, 300], [1, 0.9]);
 
   useEffect(() => {
-    // Instant scroll to top for faster page load
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
@@ -105,150 +171,142 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-[#FFF6E5] via-orange-50 to-[#FFF6E5] relative overflow-hidden">
       <ParallaxBackground />
 
-      {/* HERO (RESTORED FULL ORIGINAL STYLE) */}
+      {/* HERO */}
       <motion.section
         style={{ y: headerY, opacity: headerOpacity }}
-        className="icon-zap relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 
-                   py-16 sm:py-20 lg:py-28 overflow-hidden"
+        className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 py-16 sm:py-20 lg:py-28 text-center"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 text-center relative z-10">
-          <div className="inline-block mb-6">
-            <MessageCircle size={48} className="text-white mx-auto" />
-          </div>
+        <MessageCircle size={48} className="text-white mx-auto mb-6" />
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6">
-            Join <span className="bg-gradient-to-r from-yellow-300 to-orange-200 bg-clip-text text-transparent">YES LORVENS</span>
-          </h1>
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white">
+          Join{" "}
+          <span className="bg-gradient-to-r from-yellow-300 to-orange-200 bg-clip-text text-transparent">
+            YES LORVENS
+          </span>
+        </h1>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white/90 mb-6">
-            Build Your Future with Us
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white/90 mt-3 mb-6">
+          Build Your Future with Us
+        </h2>
+
+        <p className="text-white/80 max-w-2xl mx-auto text-lg leading-relaxed">
+          At <span className="font-bold text-yellow-300">YES LORVENS</span>, we
+          foster a culture centered on innovation, collaboration, and
+          excellence.
+        </p>
+      </motion.section>
+
+      {/* CONTACT SECTION */}
+      <section className="bg-gradient-to-r from-gray-50 to-orange-50 py-14">
+        <div className="text-center mb-10">
+          <Globe size={40} className="text-orange-500 mx-auto mb-2" />
+          <h2 className="text-4xl font-bold text-gray-800">
+            Get In{" "}
+            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+              Touch
+            </span>
           </h2>
+          <p className="text-gray-600 max-w-xl mx-auto mt-2">
+            Ready to start your journey with us? Contact us anytime.
+          </p>
+        </div>
 
-          <p
-            className="
-              text-base sm:text-lg lg:text-xl 
-              text-white/80 mx-auto leading-relaxed
-              whitespace-normal 
-              lg:whitespace-nowrap 
-              lg:max-w-none
-            "
+        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-8 px-6 lg:px-20">
+          
+          {/* FORM */}
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="xl:col-span-2"
           >
-            At <span className="font-bold text-yellow-300">YES LORVENS</span>, we foster a culture centered on innovation, collaboration, and excellence.
-          </p>
-        </div>
-      </motion.section>
+            <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 border border-orange-100">
+              <form onSubmit={handleSubmit} className="space-y-5">
 
-      {/* CONTACT SECTION (REDUCED GAPS) */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        className="relative bg-gradient-to-r from-gray-50 to-orange-50 py-10 sm:py-14 lg:py-16"
-      >
-        <div className="text-center mb-8 sm:mb-10">
-          <Globe size={40} className="text-orange-500 mx-auto" />
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-3">
-            Get In <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Touch</span>
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-            Ready to start your journey with us? Let's connect and discuss how we can help you achieve your goals.
-          </p>
-        </div>
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter your name"
+                  className="w-full p-3 border rounded-xl shadow-sm border-gray-200"
+                />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="w-full p-3 border rounded-xl shadow-sm border-gray-200"
+                />
 
-            {/* FORM */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.4, ease: "easeOut" }} 
-              className="xl:col-span-2"
-            >
-              <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-6 sm:p-7 lg:p-8 border border-orange-100 relative overflow-hidden">
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Enter your name"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:outline-none"
-                  />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:outline-none"
-                  />
-                  <input
-                    type="text"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                    placeholder="Enter subject"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:outline-none"
-                  />
-                  <textarea
-                    rows="5"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Write your message..."
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:outline-none resize-none"
-                  />
+                <input
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  placeholder="Enter subject"
+                  className="w-full p-3 border rounded-xl shadow-sm border-gray-200"
+                />
 
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-orange-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center justify-center group disabled:opacity-50"
-                  >
-                    {loading ? "Sending..." : (<><Send size={18} className="mr-2" />Send Message</>)}
-                  </motion.button>
-                </form>
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Write your message..."
+                  className="w-full p-3 border rounded-xl shadow-sm border-gray-200 resize-none"
+                  rows="5"
+                ></textarea>
 
-                {success && (
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-3 p-4 bg-green-100 text-green-700 rounded-xl flex items-center">
-                    <CheckCircle size={20} className="mr-2 text-green-600" />
-                    Message sent successfully!
-                  </motion.div>
-                )}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  disabled={loading}
+                  className="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg"
+                >
+                  {loading ? "Sending..." : "Send Message"}
+                </motion.button>
+              </form>
 
-                {error && (
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-3 p-4 bg-red-100 text-red-700 rounded-xl">
-                    {error}
-                  </motion.div>
-                )}
-              </div>
-            </motion.div>
+              {success && (
+                <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-xl flex items-center">
+                  <CheckCircle size={20} className="mr-2" />
+                  Message sent successfully!
+                </div>
+              )}
 
-            {/* CONTACT CARDS */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-5">
-              <ContactInfoCard
-                icon={Mail}
-                title="Email Us"
-                info={`yeslorvenssolutions@gmail.com\nConnect with our team for any inquiries`}
-                delay={0.05}
-                gradient="from-green-500 to-green-600"
-              />
-              <ContactInfoCard
-                icon={Phone}
-                title="Call Us"
-                info={`+91 7013814030\n+91 4031985921\nAvailable Mon-Fri, 9AM-6PM`}
-                delay={0.1}
-                gradient="from-purple-500 to-purple-600"
-              />
-              <ContactInfoCard
-                icon={MapPin}
-                title="Visit Us"
-                info="YES LORVENS SOLUTIONS PVT LTD, Flat No:530, ROAD NO 86, Jubilee Hills, Hyderabad, India, 500096"
-                delay={0.15}
-                gradient="from-blue-500 to-blue-600"
-              />
+              {error && (
+                <div className="mt-4 p-4 bg-red-100 text-red-700 rounded-xl">
+                  {error}
+                </div>
+              )}
             </div>
+          </motion.div>
+
+          {/* CONTACT CARDS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-6">
+            <ContactInfoCard
+  icon={Mail}
+  title="Email Us"
+  info={`yeslorvenssolutions@gmail.com\nConnect with our team for any inquiries`}
+  delay={0.05}
+  gradient="from-green-500 to-green-600"
+/>
+
+
+            <ContactInfoCard
+              icon={Phone}
+              title="Call Us"
+              info={`+91 7013814030\n+91 4031985921\nAvailable Mon-Fri, 9AM-6PM`}
+              delay={0.1}
+              gradient="from-purple-500 to-purple-600"
+            />
+
+            <ContactInfoCard
+              icon={MapPin}
+              title="Visit Us"
+              info="YES LORVENS SOLUTIONS PVT LTD, Flat No:530, ROAD NO 86, Jubilee Hills, Hyderabad, India, 500096"
+              delay={0.15}
+              gradient="from-blue-500 to-blue-600"
+            />
           </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 };
